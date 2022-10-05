@@ -160,12 +160,12 @@ ul li a:hover{
 
 /* tiene la caja opacity */
 .form{
-    background-color: rgb(173, 129, 129);
+    background-color: rgba(173, 129, 129, 0.6);
     width: 250px;
-    height: 380px;
-    opacity:0.6; 
+    height: 300px;
+    /* opacity: 0.6;  */
     position: absolute;
-    top: -20px;
+    top: -10px;
     left: 870px;
     border-radius: 10px;
     padding: 25px;
@@ -241,15 +241,9 @@ form.link a{
     color: orange;
 }
 
-/* .liw{
-    padding-top: 15px;
-    padding-bottom: 10px;
-    text-align: center;
-} */
-
 .footer{
     margin-top: 150px;
-    width: 100%;
+    width: 70%;
     padding: 100px 15%;
     background: #333;
     color:#989e8b;
@@ -289,7 +283,7 @@ form input{
 }
 
 form button{
-    background: transparent;
+    /* background: transparent; */
     border: 2px solid #fff;
     color:  rgb(173, 129, 129);
     border-radius: 30px;
