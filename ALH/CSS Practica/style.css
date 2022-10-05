@@ -47,8 +47,8 @@ ul{
 
 ul li{
     list-style: none;
-    margin-left: 62px;
-    margin-top: 27px;
+    margin-left: 70px;
+    margin-top: 70px;
     font-size: 14px;
 }
 
@@ -110,7 +110,7 @@ ul li a:hover{
     width: 1200px;
     height: auto;
     margin: auto;
-    color: white;
+    color: black;
     position:relative;
 }
 
@@ -160,10 +160,10 @@ ul li a:hover{
 
 /* tiene la caja opacity */
 .form{
-    background-color: black;
+    background-color: rgb(173, 129, 129);
     width: 250px;
     height: 380px;
-    opacity:0.6;
+    opacity:0.6; 
     position: absolute;
     top: -20px;
     left: 870px;
@@ -241,8 +241,66 @@ form.link a{
     color: orange;
 }
 
-.liw{
+/* .liw{
     padding-top: 15px;
     padding-bottom: 10px;
     text-align: center;
+} */
+
+.footer{
+    margin-top: 150px;
+    width: 100%;
+    padding: 100px 15%;
+    background: #333;
+    color:#989e8b;
+    display: flex;
+}
+
+.footer div{
+    text-align: center;
+}
+
+.col-2{
+    flex-grow: 2;
+}
+
+.footer div h3{
+    font-weight: 300;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+.col-1 a{
+    display: block;
+    text-decoration: none;
+    color: rgb(173, 129, 129);
+    margin-bottom: 10px;
+}
+
+form input{
+    width: 200px;
+    height: 45px;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    outline: none;
+    border: none;
+}
+
+form button{
+    background: transparent;
+    border: 2px solid #fff;
+    color:  rgb(173, 129, 129);
+    border-radius: 30px;
+    padding: 10px 30px;
+    font: 15px;
+    cursor: pointer;
+}
+
+.col-3 p{
+    display: block;
+    text-decoration: none;
+    color: rgb(173, 129, 129);
+    margin-bottom: 10px;
 }
