@@ -1,0 +1,63 @@
+* {
+  font-size: 40px; 
+}
+
+div {
+  margin: 20px;
+  border: 2px solid black;
+  border-radius: 20px;
+  padding: 20px;
+  background-color: #97d6f8;
+}
+
+p {
+  text-align: justify;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.parrafo {
+  font-weight: bold;
+  font-style: italic;  
+}
+
+#El3erParrafo {
+  color: rgb(12, 70, 105);
+  text-transform: uppercase;
+}
+
+[href] {
+  color: magenta;
+}
+
+[href*="https://www.google.com"] {
+  color: magenta;
+}
+
+.ClasePsuedoclasses:focus {
+  
+}
+
+.ClasePsuedoclasses:hover {
+  text-decoration: none;
+  border: 10em
+}
+
+.ClasePsuedoclasses:visited {
+  
+}
+
+.ClasePsuedoclasses:active {
+  
+}
+
+.ClasePsuedoclasses:disabled {
+  cursor: not-allowed;
+}
+
+div.border {
+ un elemento con una clase
+}
+
+div p {
+  una p dentro de un div
+}
