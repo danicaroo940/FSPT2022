@@ -8,7 +8,7 @@
   /* flex-direction: column; */ /* row-reverse */
   /* display: inline-flex; */
   /* justify-content: space-between; */ /* Afecta al eje principal */
-  align-items: flex-start; /* Afecta al eje transversal */ /* Por defecto hace stretch al eje transversal */ 
+  align-items: baseline; /* Afecta al eje transversal */ /* Por defecto hace stretch al eje transversal */ 
   align-content: center; /* afecta a todo el contenido del contenedor */
   flex-wrap: nowrap; /* salta el elemento a la siguiente linea si sobresale */
   justify-content: space-evenly;
