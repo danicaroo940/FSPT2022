@@ -1,0 +1,94 @@
+body {
+  background-color: grey;
+  height:70vh;
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+}
+.container-one{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex-grow: 1;
+}
+.container-two{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex-grow: 1;
+}
+
+.flag {
+  background-color: white;
+  width: 20vh;
+  height: 12vh;
+}
+
+.group-one, .group-two, .group-three{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.flag-one{
+  display: flex;
+  flex-direction: column;
+}
+.spa-one {
+  background-color: red;
+  height: 25.33%;
+}
+
+.spa-two {
+  background-color: yellow;
+  flex-grow: 1;
+}
+
+.arg-one {
+  background-color: rgb(117,170, 219);
+  height: 33.33%;
+}
+
+.arg-two {
+  height: 33.33%;
+}
+
+.ger-one {
+  background-color: black;
+  height: 33.33%;
+}
+
+.ger-two {
+  background-color: red;
+  height: 33.33%;
+}
+
+.ger-three {
+  background-color: yellow;
+  height: 33.33%;
+}
+
+.flag-four{
+  display: flex;
+}
+.fran-one{
+  background-color: blue;
+  width: 33.33%;
+  height: 100%;
+}
+
+.fran-two{
+  background-color: white;
+  width: 33.33%;
+  height: 100%;
+}
+.fran-three{
+    background-color: red;
+    width: 33.33%;
+    height: 100%;
+}
