@@ -49,11 +49,6 @@ body {
   flex-grow: 1;
 }
 
-.spa-three {
-  background-color: red;
-  height: 25.33%;
-}
-
 .arg-one {
   background-color: rgb(117,170, 219);
   height: 33.33%;
