@@ -94,9 +94,9 @@ header {
   font-weight: bolder;
 }
 
-nav {
+/* nav {
 
-}
+} */
 
 main {
   display: flex;
@@ -199,6 +199,7 @@ footer {
   height: 200px;
 
   margin: 0;
+  border: 0;
   border-radius: 20px;
   padding: 0;
   
@@ -208,30 +209,56 @@ footer {
   appearance: none;
   z-index: 1;
 
-  background-image: url(Images/Cardreverse.jpg);
+  background:url(Images/Cardreverse.jpg);
+  background-blend-mode: normal;
   background-size: contain;
   background-position: center;
 }
 
-.card:checked {border: 3px solid gold;}
+.card:checked {border: 3px solid gold}
 
-#card1:checked {background-image: url(Images/Poro1.jpg);}
-#card2:checked {background-image: url(Images/Poro2.jpg);}
-#card3:checked {background-image: url(Images/Poro5.jpg);}
-#card4:checked {background-image: url(Images/Poro3.jpg);}
-#card5:checked {background-image: url(Images/Poro5.jpg);}
-#card6:checked {background-image: url(Images/Poro4.jpg);}
-#card7:checked {background-image: url(Images/Poro6.jpg);}
-#card8:checked {background-image: url(Images/Poro9.jpg);}
-#card9:checked {background-image: url(Images/Poro10.jpg);}
-#card10:checked {background-image: url(Images/Poro1.jpg);}
-#card11:checked {background-image: url(Images/Poro8.jpg);}
-#card12:checked {background-image: url(Images/Poro10.jpg);}
-#card13:checked {background-image: url(Images/Poro9.jpg);}
-#card14:checked {background-image: url(Images/Poro2.jpg);}
-#card15:checked {background-image: url(Images/Poro8.jpg);}
-#card16:checked {background-image: url(Images/Poro3.jpg);}
-#card17:checked {background-image: url(Images/Poro7.jpg);}
-#card18:checked {background-image: url(Images/Poro7.jpg);}
-#card19:checked {background-image: url(Images/Poro4.jpg);}
-#card20:checked {background-image: url(Images/Poro6.jpg);}
+:root {
+  --por1: url(Images/Poro1.jpg);
+  --por2: url(Images/Poro2.jpg);
+  --por3: url(Images/Poro3.jpg);
+  --por4: url(Images/Poro4.jpg);
+  --por5: url(Images/Poro5.jpg);
+  --por6: url(Images/Poro6.jpg);
+  --por7: url(Images/Poro7.jpg);
+  --por8: url(Images/Poro8.jpg);
+  --por9: url(Images/Poro9.jpg);
+  --por10: url(Images/Poro10.jpg);
+  --por11: url(Images/Poro1.jpg);
+  --por12: url(Images/Poro2.jpg);
+  --por13: url(Images/Poro3.jpg);
+  --por14: url(Images/Poro4.jpg);
+  --por15: url(Images/Poro5.jpg);
+  --por16: url(Images/Poro6.jpg);
+  --por17: url(Images/Poro7.jpg);
+  --por18: url(Images/Poro8.jpg);
+  --por19: url(Images/Poro9.jpg);
+  --por20: url(Images/Poro10.jpg);
+}
+
+
+
+#card1:checked {background-image: var(--por1);}
+#card2:checked {background-image: var(--por2);}
+#card3:checked {background-image: var(--por3);}
+#card4:checked {background-image: var(--por4);}
+#card5:checked {background-image: var(--por5);}
+#card6:checked {background-image: var(--por6);}
+#card7:checked {background-image: var(--por7);}
+#card8:checked {background-image: var(--por8);}
+#card9:checked {background-image: var(--por9);}
+#card10:checked {background-image: var(--por10);}
+#card11:checked {background-image: var(--por11);}
+#card12:checked {background-image: var(--por12);}
+#card13:checked {background-image: var(--por13);}
+#card14:checked {background-image: var(--por14);}
+#card15:checked {background-image: var(--por15);}
+#card16:checked {background-image: var(--por16);}
+#card17:checked {background-image: var(--por17);}
+#card18:checked {background-image: var(--por18);}
+#card19:checked {background-image: var(--por19);}
+#card20:checked {background-image: var(--por20);}
