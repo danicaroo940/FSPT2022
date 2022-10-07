@@ -283,7 +283,7 @@ form input{
 }
 
 form button{
-    /* background: transparent; */
+    background: transparent;
     border: 2px solid #fff;
     color:  rgb(173, 129, 129);
     border-radius: 30px;
