@@ -2,6 +2,9 @@
     background-color: rgba(128, 128, 128, 0.055);
 }
 
+body {
+    margin: 0%;
+}
 
 .square {
     margin-top: 4%;
@@ -209,7 +212,7 @@ ul {
 .square4 {
     border-style: none;
     margin-left: 65%;
-    margin-top: -26.7%;
+    margin-top: -26.3%;
     width: 400px;
     height: 400px;
     text-align: center;
