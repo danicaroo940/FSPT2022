@@ -34,6 +34,7 @@
 
 .menu:hover {
     cursor: pointer;
+    transform: scale(1.1);
 }
 
 .vertical-line {
@@ -75,7 +76,7 @@
 .boton {
     padding: 15px 25px;
     border: 1px solid rgb(244, 66, 66);
-    border-radius: 20%;
+    border-radius: 40px;
     background-color: rgb(244, 66, 66);
     text-decoration: none;
     position: relative;
