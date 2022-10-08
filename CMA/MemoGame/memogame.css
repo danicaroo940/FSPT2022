@@ -13,10 +13,11 @@ body {
   align-items: center;
 
   box-sizing: border-box;
+  /* aspect-ratio: w/h; */
   width: 100vw;
-  /* min-width: none; */
+  min-width: 500px;
   height: 100vh;
-  /* min-height: none; */
+  min-height: 600px;
 
   background-color: white;
   margin: 0;
@@ -30,6 +31,8 @@ body {
   /* flex-grow: 1; */
   /* flex-shrink: 1; */
   /* flex-basis: auto; */
+  /* order: 0; */
+  /* gap: 0; */
 }
 
 
@@ -43,7 +46,7 @@ header {
   box-sizing: border-box;
   width: 100%;
   height: 10%;
-  min-height: 50px;
+  /* min-height: 50px; */
 
   background: url(Images/Head.jpg), rgba(255, 255, 255, 0.3);
   background-size: 100%;
@@ -68,8 +71,8 @@ header {
 }
 
 .logo img {
-  width: 85px;
-  height: 85px;
+  width: 45px;  /* 85 px original */
+  height: 45px; /* 85 px original */
 
   margin: 0;
   border: 3px solid goldenrod;
@@ -90,7 +93,7 @@ header {
   padding: 0;
 
   color: white;
-  font-size: 4rem;
+  font-size: 2rem; /* 4 rem original */
   font-weight: bolder;
 }
 
@@ -108,14 +111,14 @@ main {
   box-sizing: border-box;
   width: 100%;
   height: 80%;
-  min-height: 900px;
+  /* min-height: 900px; */
 
   background: url(Images/wallpaper1.jpg), rgba(255, 255, 255, 0.3);
   background-size: cover;
   background-position: center;
   background-blend-mode: overlay;
   margin: 0;
-  padding: 20px;
+  padding: 0 20px;
 
   flex-flow: row nowrap;
 }
@@ -152,16 +155,18 @@ footer {
   margin: 0;
   border-top: 3px solid goldenrod;
   padding: 0;
+
+  gap: 20px;
 }
 
 .footer-elements {
   display: inline-flex;
-  margin: 0 40px;
+  margin: 0 10px;
 }
 
 .footer-elements a {
   color: white;
-  font-size: 1.5rem;
+  font-size: 1rem; /* 200 px original */
   text-decoration: none;
 }
 
@@ -175,7 +180,7 @@ footer {
   display: flex;
   position: relative;
 
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
 
   box-sizing: border-box;
@@ -183,11 +188,11 @@ footer {
   height: 25%;
 
   margin: 0;
-  padding: 0;
+  padding: 10px;
 
   align-content: center;
   
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
 }
 
 .card {
@@ -195,10 +200,11 @@ footer {
   position: relative;
 
   box-sizing: border-box;
-  width: 140px;
-  height: 200px;
+  /* width: 140px;*/
+  height: 100%; /* 200 px original */
+  aspect-ratio: 140/200;
 
-  margin: 0;
+  margin: 0 20px;
   border: 0;
   border-radius: 20px;
   padding: 0;

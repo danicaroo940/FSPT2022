@@ -1,23 +1,22 @@
-  
-function RandomArray(arraylen) {
-  var xrdarray = [];
+function randomArray(arraylen) {
+  let xrdarray = [];
   while(xrdarray.length < arraylen){
-    var r = Math.floor(Math.random() * 10) + 1;
+    let r = Math.floor(Math.random() * 10) + 1;
     if(xrdarray.indexOf(r) === -1) xrdarray.push(r);
   }
-  var rdarray = xrdarray.map(function(element){
+  let rdarray = xrdarray.map(function(element){
     return element - 1;
   });
   return rdarray;
 }
 
-function AssignCards() {
-  var root = document.querySelector(':root');
+function assignCards() {
+  const root = document.querySelector(':root');
   // var rootStyles = getComputedStyle(root);
   // var Por1 = rootStyles.getPropertyValue('--por1')
   // window.alert(Por1)
 
-  const CardsURL = [
+  const cardsURL = [
     'URL(Images/Poro1.jpg)',
     'URL(Images/Poro2.jpg)',
     'URL(Images/Poro3.jpg)',
@@ -53,17 +52,42 @@ function AssignCards() {
     "--por20"
   ];
 
-  var Arr1 = RandomArray(10,10);
-  var Arr2 = RandomArray(10,10);
-  var CardAssignment = Arr1.concat(Arr2);
-  var StringURL = ""
+  let Arr1 = randomArray(10,10);
+  let Arr2 = randomArray(10,10);
+  let cardAssignment = Arr1.concat(Arr2);
+  let stringURL = ""
 
   for (let i = 0; i < 20; i++) {
-    StringURL = CardsURL[CardAssignment[i]];
-    root.style.setProperty(VarID[i], StringURL)
+    stringURL = cardsURL[cardAssignment[i]];
+    root.style.setProperty(VarID[i], stringURL)
   };
 }
 
-// function GameControl {
+function gameControl() {
+  let cardTurned = 0;
+  let cardsTurnedNow = 0;
+  const maxCardsTurned = 2;
 
-// }
+  let cardStatusArray = [
+    {cardID:"card1", cardStatus:0},
+    {cardID:"card2", cardStatus:0},
+    {cardID:"card3", cardStatus:0},
+    {cardID:"card4", cardStatus:0},
+    {cardID:"card5", cardStatus:0},
+    {cardID:"card6", cardStatus:0},
+    {cardID:"card7", cardStatus:0},
+    {cardID:"card8", cardStatus:0},
+    {cardID:"card9", cardStatus:0},
+    {cardID:"card10", cardStatus:0},
+    {cardID:"card11", cardStatus:0},
+    {cardID:"card12", cardStatus:0},
+    {cardID:"card13", cardStatus:0},
+    {cardID:"card14", cardStatus:0},
+    {cardID:"card15", cardStatus:0},
+    {cardID:"card16", cardStatus:0},
+    {cardID:"card17", cardStatus:0},
+    {cardID:"card18", cardStatus:0},
+    {cardID:"card19", cardStatus:0},
+    {cardID:"card20", cardStatus:0}
+  ]
+}
