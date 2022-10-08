@@ -50,9 +50,7 @@
 //   }
 // }
 
-// EJERCICIO 4 - Calculadora (funcionas) add,substract, multiply, divide, AC
-
-
+// EJERCICIO 4 - Calculadora (funcionas) add,substract, multiply, divide, Ac
 
 function add(numOne, numTwo) {
   return numOne + numTwo;
@@ -86,8 +84,3 @@ function ac() {
 }
 const result5 = ac();
 console.log(result5);
-
-
-
-
-
