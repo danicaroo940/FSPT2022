@@ -40,17 +40,17 @@ body {
   flex-direction: column;
 }
 .spa-one {
-  background-color: red;
+  background-color: rgb(173, 21, 25);
   height: 25.33%;
 }
 
 .spa-two {
-  background-color: yellow;
+  background-color: rgb(250, 189, 0);
   flex-grow: 1;
 }
 
 .arg-one {
-  background-color: rgb(117,170, 219);
+  background-color: rgb(117,170,219);
   height: 33.33%;
 }
 
@@ -64,12 +64,12 @@ body {
 }
 
 .ger-two {
-  background-color: red;
+  background-color: rgb(255,0,0);
   height: 33.33%;
 }
 
 .ger-three {
-  background-color: yellow;
+  background-color: rgb(255,204, 0);
   height: 33.33%;
 }
 
@@ -77,18 +77,38 @@ body {
   display: flex;
 }
 .fran-one{
-  background-color: blue;
+  background-color: rgb(05, 20, 64);
   width: 33.33%;
   height: 100%;
 }
 
 .fran-two{
-  background-color: white;
   width: 33.33%;
   height: 100%;
 }
 .fran-three{
-    background-color: red;
+    background-color: rgb(236,25,32);;
     width: 33.33%;
     height: 100%;
+}
+
+.flag-five{
+  display: flex;
+}
+
+.ita-one{
+  background-color: rgb(0, 140, 69);
+  width: 33.33%;
+  height: 100%;
+}
+
+.ita-two{
+  width: 33.33%;
+  height: 100%;
+}
+
+.ita-three{
+  background-color: rgb(205,33,42);
+  width: 33.33%;
+  height: 100%;
 }
