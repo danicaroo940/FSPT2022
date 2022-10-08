@@ -34,6 +34,18 @@ function FibonacciArray(number) {
   return fibonacci;
 }
 
+function FibonacciArray2(number) {
+  let fibonacci = [];
+  fibonacci[0] = 0;
+  fibonacci[1] = 1;
+
+  for (let i = 2; fibonacci[i - 1] < number; i++) {
+    fibonacci[i] = fibonacci[i - 2] + fibonacci[i - 1];
+  }
+  
+  return fibonacci;
+}
+
 function isAFibonacciNumber(number) {
   const TmpArray = FibonacciArray(number);
   const limit = TmpArray.length;
