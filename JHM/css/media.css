@@ -1,0 +1,64 @@
+
+/* @media (max-width: 1800px) {
+  .responsive {
+    background-color: sandybrown;
+    height: 600px;
+    width: 600px;
+    margin: 50px;
+    display: inline-block;
+  }
+}
+
+@media (max-width: 1500px) {
+  .responsive {
+    background-color: darkcyan;
+    height: 450px;
+    width: 450px;
+    margin: 20px;
+    display: block;
+  }
+}
+
+@media (max-width: 1200px) {
+  .responsive {
+    background-color: aqua;
+    height: 300px;
+    width: 300px;
+    margin: 5px;
+  }
+} */
+
+/* cambio */
+
+@media (min-width: 0) {
+  .responsive {
+    background-color: aqua;
+    height: 300px;
+    width: 300px;
+    margin: 5px;
+  }
+}
+
+@media (min-width: 750px) {
+  .responsive {
+    background-color: darkcyan;
+    height: 450px;
+    width: 450px;
+    margin: 20px;
+    display: block;
+  }
+}
+
+@media (min-width: 1500px) {
+  .responsive {
+    background-color: sandybrown;
+    height: 600px;
+    width: 600px;
+    margin: 50px;
+    display: inline-block;
+  }
+
+  .one {
+    color: red;
+  }
+}
