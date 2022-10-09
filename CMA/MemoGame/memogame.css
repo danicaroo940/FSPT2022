@@ -13,10 +13,11 @@ body {
   align-items: center;
 
   box-sizing: border-box;
+  /* aspect-ratio: w/h; */
   width: 100vw;
-  /* min-width: none; */
+  min-width: 500px;
   height: 100vh;
-  /* min-height: none; */
+  min-height: 600px;
 
   background-color: white;
   margin: 0;
@@ -30,6 +31,8 @@ body {
   /* flex-grow: 1; */
   /* flex-shrink: 1; */
   /* flex-basis: auto; */
+  /* order: 0; */
+  /* gap: 0; */
 }
 
 
@@ -43,7 +46,7 @@ header {
   box-sizing: border-box;
   width: 100%;
   height: 10%;
-  min-height: 50px;
+  /* min-height: 50px; */
 
   background: url(Images/Head.jpg), rgba(255, 255, 255, 0.3);
   background-size: 100%;
@@ -68,8 +71,8 @@ header {
 }
 
 .logo img {
-  width: 85px;
-  height: 85px;
+  width: 45px;  /* 85 px original */
+  height: 45px; /* 85 px original */
 
   margin: 0;
   border: 3px solid goldenrod;
@@ -90,7 +93,7 @@ header {
   padding: 0;
 
   color: white;
-  font-size: 4rem;
+  font-size: 2rem; /* 4 rem original */
   font-weight: bolder;
 }
 
@@ -108,14 +111,13 @@ main {
   box-sizing: border-box;
   width: 100%;
   height: 80%;
-  min-height: 900px;
 
   background: url(Images/wallpaper1.jpg), rgba(255, 255, 255, 0.3);
   background-size: cover;
   background-position: center;
   background-blend-mode: overlay;
   margin: 0;
-  padding: 20px;
+  padding: 0 20px;
 
   flex-flow: row nowrap;
 }
@@ -152,16 +154,18 @@ footer {
   margin: 0;
   border-top: 3px solid goldenrod;
   padding: 0;
+
+  gap: 20px;
 }
 
 .footer-elements {
   display: inline-flex;
-  margin: 0 40px;
+  margin: 0 10px;
 }
 
 .footer-elements a {
   color: white;
-  font-size: 1.5rem;
+  font-size: 1rem; /* 200 px original */
   text-decoration: none;
 }
 
@@ -175,7 +179,7 @@ footer {
   display: flex;
   position: relative;
 
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
 
   box-sizing: border-box;
@@ -183,11 +187,11 @@ footer {
   height: 25%;
 
   margin: 0;
-  padding: 0;
+  padding: 10px;
 
   align-content: center;
   
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
 }
 
 .card {
@@ -195,10 +199,11 @@ footer {
   position: relative;
 
   box-sizing: border-box;
-  width: 140px;
-  height: 200px;
+  /* width: 140px;*/
+  height: 100%; /* 200 px original */
+  aspect-ratio: 140/200;
 
-  margin: 0;
+  margin: 0 20px;
   border: 0;
   border-radius: 20px;
   padding: 0;
@@ -214,8 +219,6 @@ footer {
   background-size: contain;
   background-position: center;
 }
-
-.card:checked {border: 3px solid gold}
 
 :root {
   --por1: url(Images/Poro1.jpg);
@@ -238,27 +241,47 @@ footer {
   --por18: url(Images/Poro8.jpg);
   --por19: url(Images/Poro9.jpg);
   --por20: url(Images/Poro10.jpg);
+  --card1Border: 2.5px solid goldenrod;
+  --card2Border: 2.5px solid goldenrod;
+  --card3Border: 2.5px solid goldenrod;
+  --card4Border: 2.5px solid goldenrod;
+  --card5Border: 2.5px solid goldenrod;
+  --card6Border: 2.5px solid goldenrod;
+  --card7Border: 2.5px solid goldenrod;
+  --card8Border: 2.5px solid goldenrod;
+  --card9Border: 2.5px solid goldenrod;
+  --card10Border: 2.5px solid goldenrod;
+  --card11Border: 2.5px solid goldenrod;
+  --card12Border: 2.5px solid goldenrod;
+  --card13Border: 2.5px solid goldenrod;
+  --card14Border: 2.5px solid goldenrod;
+  --card15Border: 2.5px solid goldenrod;
+  --card16Border: 2.5px solid goldenrod;
+  --card17Border: 2.5px solid goldenrod;
+  --card18Border: 2.5px solid goldenrod;
+  --card19Border: 2.5px solid goldenrod;
+  --card20Border: 2.5px solid goldenrod;
 }
 
 
 
-#card1:checked {background-image: var(--por1);}
-#card2:checked {background-image: var(--por2);}
-#card3:checked {background-image: var(--por3);}
-#card4:checked {background-image: var(--por4);}
-#card5:checked {background-image: var(--por5);}
-#card6:checked {background-image: var(--por6);}
-#card7:checked {background-image: var(--por7);}
-#card8:checked {background-image: var(--por8);}
-#card9:checked {background-image: var(--por9);}
-#card10:checked {background-image: var(--por10);}
-#card11:checked {background-image: var(--por11);}
-#card12:checked {background-image: var(--por12);}
-#card13:checked {background-image: var(--por13);}
-#card14:checked {background-image: var(--por14);}
-#card15:checked {background-image: var(--por15);}
-#card16:checked {background-image: var(--por16);}
-#card17:checked {background-image: var(--por17);}
-#card18:checked {background-image: var(--por18);}
-#card19:checked {background-image: var(--por19);}
-#card20:checked {background-image: var(--por20);}
+#card1:checked {background-image: var(--por1); border: var(--card1Border)}
+#card2:checked {background-image: var(--por2); border: var(--card2Border)}
+#card3:checked {background-image: var(--por3); border: var(--card3Border)}
+#card4:checked {background-image: var(--por4); border: var(--card4Border)}
+#card5:checked {background-image: var(--por5); border: var(--card5Border)}
+#card6:checked {background-image: var(--por6); border: var(--card6Border)}
+#card7:checked {background-image: var(--por7); border: var(--card7Border)}
+#card8:checked {background-image: var(--por8); border: var(--card8Border)}
+#card9:checked {background-image: var(--por9); border: var(--card9Border)}
+#card10:checked {background-image: var(--por10); border: var(--card10Border)}
+#card11:checked {background-image: var(--por11); border: var(--card11Border)}
+#card12:checked {background-image: var(--por12); border: var(--card12Border)}
+#card13:checked {background-image: var(--por13); border: var(--card13Border)}
+#card14:checked {background-image: var(--por14); border: var(--card14Border)}
+#card15:checked {background-image: var(--por15); border: var(--card15Border)}
+#card16:checked {background-image: var(--por16); border: var(--card16Border)}
+#card17:checked {background-image: var(--por17); border: var(--card17Border)}
+#card18:checked {background-image: var(--por18); border: var(--card18Border)}
+#card19:checked {background-image: var(--por19); border: var(--card19Border)}
+#card20:checked {background-image: var(--por20); border: var(--card20Border)}

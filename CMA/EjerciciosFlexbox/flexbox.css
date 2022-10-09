@@ -14,6 +14,7 @@
   justify-content: space-evenly;
   background-color: pink;
   /* flex-flow: column nowrap; */
+  gap:10px;
 }
 /* Flex-grow fraccion del espacio del eje principal que ocupa el item, flex-shrink, flex-basis es un width*/ /* Shorthand Flex (Flex grow por def 0, Flex shrink por def 1, flex basis por def auto*/
 .flex-items {
@@ -25,4 +26,22 @@
 
 .flex-container div:nth-child(3) {
   color: red;
+}
+
+@media (min-width: 0px) {
+  .main {
+    min-height: 5000px;
+  }
+}
+
+@media (min-width: 500px) {
+  .main {
+    min-height: 500px;
+  }
+}
+
+@media (min-width: 2000px) {
+  .main {
+    min-height: 0;
+  }
 }

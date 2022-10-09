@@ -1,0 +1,17 @@
+{
+  "extends": ["eslint:recommended"],
+  "env":{
+    "es6": true,
+    "browser": true
+  },
+  "rules":{
+    "no-console": "warn",
+    "semi": [2, "always"],
+    "prefer-const": "error",
+    "quotes": ["error", "single"],
+    "array-bracket-spacing": "error",
+    "space-in-parens": "error",
+    "spaced-comment": "error",
+    "no-tralling-spaces": "error"
+  }
+}
