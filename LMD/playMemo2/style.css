@@ -1,0 +1,53 @@
+/* Header */
+
+header {
+  background-color: blue;
+  padding: 5px;
+  color: aliceblue;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* Body */
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  margin-top: 20px;
+  perspective: 3000px;
+}
+
+.cardContainer {
+  width: 12%;
+  height: 180px;
+  align-items: center;
+  margin: 5px;
+  transition: transform 2s;
+  transform-style: preserve-3d;
+}
+
+
+.cardFace{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+}
+.cardFront img {
+  width: 150px;
+}
+.cardBack {
+  transform: rotateY( 180deg );
+}
+
+.cardContainer:active {
+  transform: rotateY(180deg);
+}
