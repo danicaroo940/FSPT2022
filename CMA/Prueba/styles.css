@@ -1,0 +1,111 @@
+* {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+header {
+  height: 10%;
+  width: 100vw;
+  z-index: 2;
+  box-sizing: border-box;
+  background-color: rgb(107, 162, 99);
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+}
+
+nav {
+  height: 10%;
+  width: 100vw;
+  z-index: 2;
+  box-sizing: border-box;
+  background-color: rgb(68, 179, 52);
+  position: fixed;
+  top: 2.5em;
+  left: 0;
+  overflow-x: hidden;
+  padding: 0 5%;
+}
+
+.navelements {
+  height: 100%;
+  width: 75%;
+  box-sizing: border-box;
+  display: table;
+  position: relative;
+  float: left;
+  border: 2px solid black;
+}
+
+.navelements a {
+  display: table-cell;
+  text-decoration: none;
+  color: white;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.navelements a:hover {
+  background-color: aqua;
+}
+
+.navelements a:active {
+  background-color: blue;
+}
+
+.navsearch {
+  height: 100%;
+  width: 25%;
+  box-sizing: border-box;
+  display: table;
+  position: relative;
+  float: right;
+  vertical-align: middle;
+  border: 2px solid black;
+}
+
+#search-bar {
+  height: 60%;
+  width: 90%;
+  box-sizing: border-box;
+  position: relative;
+  float: left;
+  left: 5%;
+  top: 20%;
+}
+
+main {
+  height: 85vh;
+  width: 100%;
+  z-index: 1;
+  position: fixed;
+  top: 15%;
+  left: 0;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background-color: antiquewhite;
+}
+
+section {
+  height: 1800px;
+  width: 67.5%;
+  z-index: 2;
+  box-sizing: border-box;
+  background-color: lightcoral;
+  position: absolute;
+  float: left;
+  top: 20px;
+  left: 5%;
+}
+
+aside {
+  height: 1800px;
+  width: 22%;
+  z-index: 2;
+  box-sizing: border-box;
+  background-color: lightseagreen;
+  position: absolute;
+  float: left;
+  top: 20px;
+  left: 74%;
+}
