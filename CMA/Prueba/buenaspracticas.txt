@@ -1,7 +1,0 @@
-Definir la fuente en *
-Definir las secciones (header/main/footer) en %
-Definir minwidth y minheight al body en px
-Definir los objetos visuales importantes con aspect ratio y minwidth y minheight
-Aplicar siempre un minimo padding a los divs
-No aplicar margin por regla general y alinear los objetos con flex
-
