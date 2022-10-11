@@ -119,11 +119,29 @@
 // bonusPoints = bonusPoints + 100 - 25 + 70
 // console.log (bonusPoints)
 
-// Array
-const groceries = [ 'banana', 'apple', 'orange', 'pear']
-console.log(groceries)
-console.log(groceries[1])
+// ARRAY:
+// const groceries = [ 'banana', 'apple', 'orange', 'pear']
+// console.log(groceries)
+// console.log(groceries[1])
+
+// ARRAY METHODS
 // groceries.push('cookie')
 // console.log(groceries)
+
+// ARRAY SLICE
+
+OBJECT:
+
+const name = 'ada';
+const age = 26;
+const alive: true;
+const person = {
+    name: 'ada',
+    age: age;
+    alive: alive
+};
+
+console.log(person.name);
+console.log(person['age']);
 
 
