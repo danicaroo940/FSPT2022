@@ -15,7 +15,7 @@
         </div>
         <br>
         <div>
-            <form class="text-us" action="" method="POST">
+            <form name="registration_form" class="text-us" action="" method="GET">
                 <div><h4>
                     <label for="text-id">Nombre:</label>
                     <input id="text-id" type="text" name="text-name">
@@ -24,7 +24,7 @@
                     <label for="number-id">E-mail:</label>
                     <input id="number-id" type="text" name="text-email">
                 </div>
-                <div>¿Mayor de edad?
+                <div>¿Eres mayor de edad?
                     <input type="radio" id="radio-yes-id" name="radio-name" value="yes">
                     <label for="radio-yes-id">Sí</label>
                     <input type="radio" id="radio-no-id" name="radio-name" value="no">
@@ -35,7 +35,7 @@
                     <input type="checkbox" id="checkerbox" name="checker-box-tac" value="checker-box-value">
                 </div>
                 <div>
-                    <a href="registro.html">Regístrame</a>
+                    <a href="registro.html" onclick="registerUser();">Regístrame</a>
                 </div>
                 </h4>
                 <br>
@@ -48,4 +48,11 @@
     <div class="split right">
     </div>
 </body>
+<script>
+    function registerUser(){
+        let name = document.getItemById("text-name").value;
+        localStorage.setItem("nombre", name);
+        window.location.href="registro.html";
+    }
+</script>
 </html>

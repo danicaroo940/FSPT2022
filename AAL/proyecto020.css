@@ -1,0 +1,11 @@
+
+body{
+    font-family: Georgia;
+    background-color: wheat;
+}
+
+.centralize{
+    display: flex;
+    justify-content: center;
+}
+
