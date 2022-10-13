@@ -21,34 +21,49 @@ body{
     right: 0;
 }
 
-.flex-container{
+.flex-container, .box-transform{
     display: flex;
     align-items: stretch;
-    background-color: aqua;
+    flex-direction: row;
 }
 
 .flex-container div{
-    background-color: blueviolet;
-    color: white;
     margin: 1px;
     text-align: center;
 }
 
 .slash{
-    background-color: gray;
     width: 100%;
     height: 50%;
 }
 
 .split-short{
-    flex-grow: 4;
+    flex-grow: 2;
 }
 
 .split-large{
    flex-grow: 8;
 }
 
-.column{
-    float: left;
-    width: 20%;
+.split-short img{
+    padding: 20px;
+    max-width: 200px;
+    height: auto;
+}
+
+.split-large img{
+    display: flex;
+    justify-content: flex-start;
+    max-width: 250px;
+    height: auto;
+    padding: 20px;
+}
+
+.box-transform img{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    max-width: 700px;
+    height: auto;
+    padding: 20px;
 }
