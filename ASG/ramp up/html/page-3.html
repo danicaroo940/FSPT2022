@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpg" href="/./ramp up/imagenes/logo-no-do.jpeg"/>
+    <link rel="stylesheet" href="../css/page-3-styles.css">
+    <title>NO-DO</title>
+</head>
+<body>
+  <div class="padre">
+    <div class="break"></div>
+    <div class="hijo">
+      <h3 class="text-subscribe">Suscribete para recibir el periódico vía mail </h3>
+      <form action="./registro.html">
+        <div class="form">
+          <label for="name">Nombre: </label>
+          <input type="text" id="name" name="name" placeholder="Nombre" class="input-name" required>
+        </div>
+        <div class="form">
+          <label for="email">Email: </label>
+          <input type="email" id="email" name="email" placeholder="E-mail" class="input-name" required>
+        </div>
+        <div class="form">
+          <label for="mayoredad">Mayor de edad: </label>
+          <label for="mayoredad" >Si</label>
+          <input type="radio" id="mayoredad" name="mayoredad" value="si" required class="input-name">
+          <label for="menoredad">No</label>
+          <input type="radio" id="menoredad" name="mayoredad" value="no" class="input-name">
+        </div>
+        <div class="form">
+        <label for="country">Pais: </label>
+        <input type="text" id="country" list="datalist-id" name="country-name" class="input-name" placeholder="Selecciona un pais">
+        <datalist id="datalist-id">
+          <option value="España">España</option>
+          <option value="Venezuela">Venezuela</option>
+          <option value="EE-UU">EE-UU</option>
+          <option value="Argentina">Argentina</option>
+        </datalist>
+        </div>
+        <div class="form">
+          <label for="terminos">Terminos y condiciones: </label>
+          <input type="checkbox" id="terminos" name="terminos" value="checked" required class="input-name">
+        </div>
+        <div class="form">
+          <button type="submit" class="input-name btn">Enviar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <a href="./page-2.html" class="btn-second-page ">anterior</a>
+</body>
+</html>

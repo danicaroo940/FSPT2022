@@ -1,0 +1,82 @@
+*{
+    margin:0;
+    padding:0;
+    border:0;
+}
+
+.padre {
+    display:flex;
+    justify-content:flex-end;
+    flex-direction:column;
+    align-items:flex-end;
+    width:100%;
+    height:100vh;
+    box-sizing:border-box;
+}
+
+.break {
+    position:absolute;
+    left:50%;
+    background-color:black;
+    width:1px;
+    height:100%;
+    margin-bottom:0px;
+}
+
+.title {
+    position:absolute;
+    margin-top:25px;
+}
+
+.headline {
+    margin-top:50px;
+}
+
+.hijo {
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    width:50%;
+    height:100%;
+}
+
+.franco-images {
+    display:flex;
+    justify-content:center;
+    
+    width:100%;
+    height:100%;
+    margin-top:30px;
+}
+
+.img-fraga {
+    position:relative;
+    text-align:center;
+    height:250px;
+    margin-top:90px;
+}
+
+.franco-1 {
+    width:150px;
+    height: 140px;
+    margin:15px;
+}
+
+.btn-second-page {
+    padding:6px 15px;
+    background-color:black;
+    border-radius:5%;
+    text-decoration:none;
+    color:white;
+    position:absolute;
+    right:20px;
+    top:620px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-radius:10px;
+    transition: transform 0.5s;
+}
+
+.btn-second-page:hover {
+    transform: scale(1.1);
+
+}
