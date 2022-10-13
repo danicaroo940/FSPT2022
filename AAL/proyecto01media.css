@@ -21,7 +21,7 @@ body{
     right: 0;
 }
 
-.flex-container, .box-transform{
+.flex-container, .box-transform, .flex-disabler{
     display: flex;
     align-items: stretch;
     flex-direction: row;
@@ -63,7 +63,37 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    max-width: 700px;
-    height: auto;
+    max-width: 500px;
+    height: 250px;
     padding: 20px;
+}
+
+.right img{
+    display: flex;
+    flex-direction: row;
+    justify-content: baseline;
+    width: 400px;
+    height: 350px;
+    padding: 20px;
+}
+
+.prev-box{
+    display: flex;
+    justify-content: flex-start;
+    font-weight: bold;
+}
+
+.box-transform br{
+    margin: 126px;
+}
+
+.flex-disabler br{
+    margin: 50px;
+}
+
+.next-box{
+    display: flex;
+    justify-self: flex-end;
+    font-weight: bold;
+    align-items: flex-end;
 }
