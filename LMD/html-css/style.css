@@ -1,0 +1,226 @@
+body {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  width: 100%;
+  font-family: 'Noto Serif', serif;
+}
+
+.logo,
+.first-image,
+.link-next {
+  margin: 2px;
+  padding: 2px;
+}
+
+.link-next {
+  align-self: flex-end;
+  padding-right: 10px;
+}
+
+.links {
+  font-size: 0.8em;
+}
+
+.one-container,
+.two-container {
+  width: 50%;
+}
+
+.two-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.image {
+  width: 33.33%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.image img {
+  width: 90%;
+  align-self: center;
+}
+
+h1 {
+  font-size: 1.8em;
+  margin-block-start: 0.5em;
+  margin-block-end: 0.6em;
+}
+
+.text,
+h5 {
+  text-align: center;
+}
+
+.text-special {
+  margin-bottom: 5px;
+}
+
+/* Style page */
+
+.container {
+  width: 100%;
+  display: flex;
+}
+
+.container-one,
+.container-two {
+  width: 50%;
+  margin: 2px;
+}
+
+.group-images-one {
+  display: flex;
+
+}
+
+.image-notice-one {
+  width: 300px;
+  align-self: center;
+
+}
+
+.notice-one {
+  display: flex;
+  flex-direction: column;
+  margin: 7px;
+}
+
+.subtitle {
+  margin: 8px 0;
+  font-size: 0.8em;
+}
+
+.text-one {
+  text-align: justify;
+  margin: 4px 0;
+  font-size: 11px;
+}
+
+.notice-two {
+  margin: 7px;
+}
+
+.image-notice-two,
+.image-notice-three {
+  width: 290px;
+  float: right;
+  margin-left: 8px;
+}
+
+.text-two {
+  margin: 8px 0;
+  text-align: justify;
+  font-size: 12px;
+}
+
+.image-notice-three {
+  margin-top: 40px;
+  margin-left: 8px;
+}
+
+.text-three {
+  text-align: justify;
+  font-size: 12px;
+  margin: 8px;
+}
+
+.notice-three .subtitle {
+  margin-left: 8px;
+}
+
+.container-link-back {
+  margin-top: 10px;
+}
+
+.link-back {
+  padding: 8px;
+}
+
+.container-two {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.div-image-container-two {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.div-image-container-two::before {
+  content: "The Bridge, Bootcamp en Valencia. En pleno centro histórico, en sede de la Universidad CEU Cardenal Herrera";
+  position: absolute;
+  width: 90%;
+  height: 76%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  text-align: center;
+  color: aliceblue;
+  font-size: 'Futura webfont', sans-serif;
+  background-color: #5b40f3a6;
+  transform: scale(0);
+  transition: transorm .4s;
+}
+
+.div-image-container-two:hover::before {
+  transform: scale(1) rotate(360deg);
+}
+
+.image-container-two {
+  width: 90%;
+}
+
+.container-link-next {
+  display: flex;
+  justify-content: end;
+  align-items: flex-end;
+  height: 20%;
+  margin-right: 8px;
+}
+
+/* Contact */
+
+.container-contact{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 100vh;
+}
+
+.form-container{
+  margin-left: 8px  ;
+}
+.radio-text{
+  margin-right: 15px;
+}
+.yes-no-container, .term-container{
+  display: flex;
+  align-items: center;
+}
+
+input{
+  margin: 4px;
+}
+
+.register{
+  display: flex;
+  justify-content: flex-end;
+}
