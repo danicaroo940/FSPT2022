@@ -1,0 +1,234 @@
+/* *{
+    margin: 0;
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    font-size: 1.5em;
+    display: flex;
+    min-height: 100vh;
+    max-height: 100vh;
+    
+}
+aside, main {
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5em;
+}
+main{
+    flex-direction: column;
+    background:#333;
+    color: #ccc;
+}
+form{
+    flex-direction: row;
+    justify-content: center;
+    width: 60%;
+    height: 60%;
+    border: 1px solid white;
+    display: flex;
+    flex-wrap: wrap;
+}
+form p{
+    
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+form p a{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.controls{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    
+}
+aside {
+    height:auto;
+    display: flex;
+    justify-content:center ;
+    flex-wrap: wrap;
+    background: #ccc;
+    color: #333;
+    }
+h1{
+        padding: 0.3em;
+    font-size: 45px;
+    align-self: flex-start; 
+    font-family: 'UnifrakturMaguntia';
+   }
+footer{
+
+     min-height: 100vh;
+    display: flex;
+    /* flex-wrap: wrap; */
+    /* background:#ccc;
+    justify-content: space-around;
+    }
+    a{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-self:flex-end ;
+    }
+.before {
+    color: #ccc;
+    min-height:100vh;
+    background: #333;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content:flex-start;
+    align-items:flex-end ;
+} */ 
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    font-size: 1.5em;
+    display: flex;
+    min-height: 100vh;
+    max-height: 100vh;
+    
+}
+aside, main {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0.5em;
+    min-height: 100vh;
+}
+main{
+    display: flex;
+    background:#333;
+    color: #ccc;
+}
+aside{
+    justify-content: flex-start;
+    align-items: center;
+}
+.subs{
+    padding: 1.5em;
+    position: absolute;
+}
+.form-register{
+    border-radius: 0.1em;
+    align-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 75%;
+    height: 70%;
+    background: rgba(112, 175, 148, 0.513);
+    box-shadow: 0 0 0 10px white,
+                0 0 0 20px hsl(0, 7%, 57%);
+
+    /* border: 1px solid white; */
+}
+.form{
+    margin-top: 0.5em;
+    height: 20%;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%;
+    /* border: 1px solid violet; */
+    display: flex;
+    flex-direction: column;
+    
+}
+.controls {
+    margin-top: .5em;
+    padding: 1em;
+    display: flex;
+    justify-content: flex-end;
+    width: 85%;
+    align-self: center;
+    height: 50%;
+    background: #ccc;
+    border-radius: 2em;
+    font-size: 0.9em;
+}
+.over18-question{
+    padding: 1em;  
+    height: 50%;
+    width: 85%;
+    background: #ccc;
+    /* padding: 1.5em; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    align-self: center;
+    color: #333;
+    border-radius: 2em;
+    font-size: 0.9em;
+}
+
+.formula {
+    text-decoration: none;
+    color: white;
+    padding: 1.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+}
+.formula:hover{
+    text-decoration: underline;
+}
+.formula a {
+    width:80% ;
+    font-size: 0.8em;
+    margin-right: 7em;
+    padding: 0.5em;
+    border-radius: 2em;
+    background: #333;
+    color: #ccc;
+    text-decoration: none;
+}
+
+.form-boton{
+    margin-left: 9em;
+    margin-bottom: 1em;
+    align-items: flex-end;
+    display: flex;
+    justify-content: flex-end;
+    height: 10%;
+    width: 50%;
+
+}
+.botons{
+    font-size: 0.9em;
+    width: 100%;
+    height: 100%;
+    border-radius: 1em;
+}
+
+.before {
+    color: #ccc;
+    min-height:100vh;
+    background: #333;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content:flex-start;
+    align-items:flex-end ;
+}

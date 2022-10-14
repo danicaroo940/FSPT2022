@@ -55,17 +55,17 @@
 
 // 10 % 3 === 1 --- 10 / 3 = 3.3333333333
 
-// const maxLaps = 20;
-// const divisor = 2;
+const maxLaps = 30;
+const divisor = 2;
 
-// for (let i = 0; i <= maxLaps; i++) { // 21 laps
-//   console.log('i', i);
-//   const leftover = i % divisor;
-//   const isOdd = leftover === 1;
-//   if (isOdd) {
-//     console.log('-----' + i + ' is odd');
-//   }
-// }
+for (let i = 0; i <= maxLaps; i++) { // 21 laps
+  console.log('i=', i);
+  const leftover = i % divisor;
+  const isOdd = leftover === 1;
+  if (isOdd) {
+    console.log('-----' + i + ' is odd');
+  }
+}
 
 // for (let i = 1; i < maxLaps; i+=2) { // i = i+2 === i+=2;
 //   console.log('-----' + i + ' is odd');
