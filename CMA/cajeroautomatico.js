@@ -6,23 +6,6 @@ function retrieveMoney(amount) {
 
   let remaining = amount * 100;
   let total = 0;
-  let totalbills = [
-    {value: 500, qty: 0},
-    {value: 200, qty: 0},
-    {value: 100, qty: 0},
-    {value: 50, qty: 0},
-    {value: 20, qty: 0},
-    {value: 10, qty: 0},
-    {value: 5, qty: 0},
-    {value: 2, qty: 0},
-    {value: 1, qty: 0},
-    {value: 0.5, qty: 0},
-    {value: 0.2, qty: 0},
-    {value: 0.1, qty: 0},
-    {value: 0.05, qty: 0},
-    {value: 0.02, qty: 0},
-    {value: 0.01, qty: 0}
-  ];
 
   console.log(hr + '\n' + `Cantidad solicitada: ${amount}€.` + '\n' + hr);
 
@@ -30,7 +13,6 @@ function retrieveMoney(amount) {
       let bills = ((remaining - (remaining % coins[i])) / coins[i]);
       remaining %= coins[i];
       total += bills * coins[i] / 100;
-      totalbills[i].qty = bills;
 
       switch (true) {
         case (i <= 5 && bills == 1):
@@ -48,7 +30,6 @@ function retrieveMoney(amount) {
       };
   };
   console.log(hr);
-  // console.log(totalbills);
 };
 
 retrieveMoney(1839.48);
