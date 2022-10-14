@@ -79,14 +79,14 @@
 .img-1 {
     margin:15px 55px;
     width:160px;
-    height:100px;
+    height:110px;
 }
 
 .img-2 {
     float:left;
     margin:15px;
     width:170px;
-    height:120px;
+    height:130px;
 }
 
 .img-3 {
@@ -103,7 +103,7 @@
 }
 
 .text-1 {
-    margin:11px;
+    margin:10px;
     font-size:15px;
 }
 
@@ -147,9 +147,13 @@
     display:flex;
     flex-direction: column;
     align-items:center;
-    width: 240px;
-    height:240px;
+    width: 220px;
+    height:220px;
+    margin:10px;
     border:1px solid black;
+    transition: all 1s;
+    border-radius:15px;
+    box-shadow:15px 15px;
 }
 
 .meme-1 {
@@ -167,3 +171,4 @@
 .meme-4 {
     background-color: #D9FFFF;
 }
+
