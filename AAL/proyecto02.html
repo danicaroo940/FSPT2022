@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="proyecto02media.css">
+    <meta charset="UTF-8">
+    <title>
+        The Bell Hammer - Register now
+    </title>
+</head>
+<body>
+    <div class="split left">
+        <div class="text-us">
+            <h1>Suscribete para recibir el periódico via e-mail</h1>
+        </div>
+        <br>
+        <div>
+            <form name="registration_form" class="text-us" action="" method="GET">
+                <div><h4>
+                    <label for="text-id">Nombre:</label>
+                    <input id="text-id" type="text" name="text-name">
+                </div>
+                <div>
+                    <label for="number-id">E-mail:</label>
+                    <input id="number-id" type="text" name="text-email">
+                </div>
+                <div>¿Eres mayor de edad?
+                    <input type="radio" id="radio-yes-id" name="radio-name" value="yes">
+                    <label for="radio-yes-id">Sí</label>
+                    <input type="radio" id="radio-no-id" name="radio-name" value="no">
+                    <label for="radio-no-id">No</label>
+                </div>
+                <div>
+                    <label for="">¿Aceptas nuestros terminos y condiciones?</label>
+                    <input type="checkbox" id="checkerbox" name="checker-box-tac" value="checker-box-value">
+                </div>
+                <div>
+                    <a href="registro.html" onclick="registerUser();">Regístrame</a>
+                </div>
+                </h4>
+                <br>
+            </form>
+        </div>
+        <div>
+            <a href="proyecto01media.css">Prev</a>
+        </div>
+    </div>
+    <div class="split right">
+    </div>
+</body>
+<script>
+    function registerUser(){
+        let name = document.getItemById("text-name").value;
+        localStorage.setItem("nombre", name);
+        window.location.href="registro.html";
+    }
+</script>
+</html>

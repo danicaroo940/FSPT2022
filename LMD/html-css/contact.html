@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Contacto</title>
+</head>
+
+<body>
+  <div class="container-contact">
+    <div>
+      <h1>Suscribete para recibir el periódico vía email</h1>
+    </div>
+    <div class="form-container">
+      <form action="registro.html" method="POST">
+        <div>
+          <label for="name">Nombre</label>
+          <input id="name" type="text" name="name" placeholder="Nombre" required>
+        </div>
+        <div>
+          <label for="email">Correo Electrónio</label>
+          <input id="email" type="email" name="email" placeholder="Email" required>
+        </div>
+        <div class="yes-no-container">
+          <div>
+            <p class="radio-text">Eres mayor de edad?</p>
+          </div>
+          <div>
+            <input type="radio" id="radio-yes" name="radio-name" value="yes" required>
+            <label for="radio-yes">Si</label>
+            <input type="radio" id="radio-no-id" name="radio-name" value="no" required>
+            <label for="radio-no-">No</label>
+          </div>
+        </div>
+        <div  class="term-container">
+          <div>
+            <p class="radio-text">Términos y Condiciones</p>
+          </div>
+          <div>
+            <input type="radio" id="radio-ok" name="radio-ok" value="ok" required>
+          </div>
+        </div>
+        <div class="register">
+          <input type="submit" value="Registrarme">
+        </div>
+      </form>
+    </div>
+    <div>
+      <a class="links" href="page.html">Volver</a>
+    </div>
+  </div>
+  <div class="container-contact-two"></div>
+</body>
+
+</html>

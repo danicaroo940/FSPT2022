@@ -1,0 +1,169 @@
+
+* {
+    margin:0;
+    padding:0;
+}
+
+.father {
+    width:100%;
+    height:100vh;
+    display:flex;
+    box-sizing:border-box;
+}
+
+.break {
+    position:absolute;
+    left:50%;
+    background-color:black;
+    width:1px;
+    height:100%;
+    margin-bottom:0px;
+}
+
+.break-2 {
+    position:absolute;
+    top:45%;
+    background-color:black;
+    width:50%;
+    height:1px;
+    margin-bottom:0px;
+}
+
+.break-3 {
+    position:absolute;
+    left:280px;
+    background-color:black;
+    width:1px;
+    height:45%;
+}
+
+.left-page {
+    width:50%;
+    height:100vh;
+}
+
+.right-page {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-around;
+    margin-top:20px;
+    width:50%;
+    height:90vh;
+}
+
+.left-page-up {
+    display:flex;
+    width:100%;
+    height:45vh;
+}
+
+.left-page-down {
+    width:100%;
+    height:45vh;
+}
+
+.left-page-up-left {
+    display:flex;
+    width:40%;
+    justify-content:flex-start;
+    height:100%;
+    flex-grow: 1;
+}
+
+.left-page-up-right {
+    width:60%;
+    height:100%;
+    flex-grow:2;
+}
+
+.img-1 {
+    margin:15px 55px;
+    width:160px;
+    height:100px;
+}
+
+.img-2 {
+    float:left;
+    margin:15px;
+    width:170px;
+    height:120px;
+}
+
+.img-3 {
+    float:right;
+    margin:10px;
+    width:320px;
+    height:180px;
+}
+
+.img-right {
+    width:130px;
+    height:150px;
+    border:8px solid white;
+}
+
+.text-1 {
+    margin:11px;
+    font-size:15px;
+}
+
+.btn-first-page {
+    padding:6px 15px;
+    background-color:black;
+    border-radius:5%;
+    text-decoration:none;
+    color:white;
+    position:absolute;
+    left:20px;
+    top:620px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-radius:10px;
+    transition: all 0.5s;
+}
+
+.btn-first-page:hover {
+    transform: scale(1.1);
+}
+
+.btn-third-page {
+    padding:6px 15px;
+    background-color:black;
+    border-radius:5%;
+    text-decoration:none;
+    color:white;
+    position:absolute;
+    right:20px;
+    top:620px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-radius:10px;
+    transition: all 0.5s;
+}
+
+.btn-third-page:hover {
+    transform: scale(1.1);
+}
+
+.pictures {
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    width: 240px;
+    height:240px;
+    border:1px solid black;
+}
+
+.meme-1 {
+    background-color:#FFDDDD;
+}
+
+.meme-2 {
+    background-color:#FFFFCF;
+}
+
+.meme-3 {
+    background-color:#D9FFDF;
+}
+
+.meme-4 {
+    background-color: #D9FFFF;
+}
