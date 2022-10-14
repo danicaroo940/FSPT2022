@@ -1,14 +1,20 @@
+
+
+
 function bank(i) {
 	console.log('withdraw'+ i + 'money');
+//  const billsAndCoins = [50000, 20000, 10000, 5000, 2000, 1000, 500, 200, 100, 50, 20, 10, 5, 2, 1, 0.05, 0.02, 0.01];
+// number = {};
 
-for (; i<0.01;) {
-   
+for (;i< 0;) {
 	if(i>=500){
   	i = i - 500;
 		console.log('withdrawn a bill of 500');
 		console.log('Remainder'+ i +'money');	
+		// console.log('Remainder'+(i/100))	
 	}else if(i>=200 && i<500){
 		i = i - 200;
+		// i= i - billsAndCoins;
 		console.log('withdrawn a bill of 200');
 		console.log('Remainder'+ i +'money');	
 	}else if(i>=100 && i<200){
