@@ -1,0 +1,99 @@
+body{
+    font-family: Georgia;
+    background-color: wheat;  
+}
+
+.split{
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.left{
+    left: 0;
+}
+
+.right{
+    right: 0;
+}
+
+.flex-container, .box-transform, .flex-disabler{
+    display: flex;
+    align-items: stretch;
+    flex-direction: row;
+}
+
+.flex-container div{
+    margin: 1px;
+    text-align: center;
+}
+
+.slash{
+    width: 100%;
+    height: 50%;
+}
+
+.split-short{
+    flex-grow: 2;
+}
+
+.split-large{
+   flex-grow: 8;
+}
+
+.split-short img{
+    padding: 20px;
+    max-width: 200px;
+    height: auto;
+}
+
+.split-large img{
+    display: flex;
+    justify-content: flex-start;
+    max-width: 250px;
+    height: auto;
+    padding: 20px;
+}
+
+.box-transform img{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    max-width: 500px;
+    height: 250px;
+    padding: 20px;
+}
+
+.right img{
+    display: flex;
+    flex-direction: row;
+    justify-content: baseline;
+    width: 400px;
+    height: 350px;
+    padding: 20px;
+}
+
+.prev-box{
+    display: flex;
+    justify-content: flex-start;
+    font-weight: bold;
+}
+
+.box-transform br{
+    margin: 126px;
+}
+
+.flex-disabler br{
+    margin: 50px;
+}
+
+.next-box{
+    display: flex;
+    justify-self: flex-end;
+    font-weight: bold;
+    align-items: flex-end;
+}

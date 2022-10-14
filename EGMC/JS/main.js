@@ -1,37 +1,22 @@
 
 
 
-// for (let i = 100; i >0; i--) {
-//     console.log("ejemplo " + i);  
-// }
 
+function withdraw (x) {
+  let bills =[500,200,100,50,20,10,5]
+  let coins=[0.1,0.2,0.5,]
 
-// function RestaCajero(billetes, monedas) {
-//     console.log([otra funcion + billetes que sobran...RestaCajero.])
-// }()2
+  console.log(x)
+  for (let i = 0; i < bills.length; i++){
 
-// function resta(x,y){
-//     resultado= x-y
-//     if(x < y){
-//         console.log("x tiene que ser mayor que y")
-//     }
-// }
-// resultado=resta
-// x=10
-// y=2
-// console.log(resultado)
-const money = 
-let divisor= 2
-
-function evenNumber (){
-  for (let i = 0; i <= maxLaps; i++) { 
-    console.log('i=', i);
-    const leftover = i % divisor;
-    const isEven = leftover === 0;
-    if (isEven) {
-      console.log('-----' + i + ' is even');
+    if(x>=bills[i]){
+      let resta1= x - bills[i]
+      console.log ( 'te quedan ' +resta1  + '$')
     }
+
+  }
+
 }
-}
-numeropar=EvenNumber()
-console.log(numeropar)
+withdraw(700)
+
+
