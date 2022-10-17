@@ -37,3 +37,29 @@
     // Queda por sacar 910.23€
     // 1 billete de 500€
     // Se ha sacado 1000€
+
+
+
+
+const availableCashes = [500, 200, 100, 50, 20, 10, 5, 2, 1, 0.5, 0.20, 0.10, 0.05, 0.02, 0.01];
+
+function getAvailableCash(amount) {
+  let amountToReturn = amount;
+  for (let i = 0; i < availableCashes.length; i++) {
+    const availableCash = availableCashes[i];
+    if (amountToReturn > availableCash) {
+        console.log('Queda por devolver', parseFloat(amountToReturn.toFixed(2)));
+      if (availableCash > 2) {
+        console.log('1 billete de ' + availableCash + ' €');
+      } else {
+        console.log('1 moneda de ' + availableCash + ' €');
+      }
+
+      amountToReturn -= availableCash;
+      console.log('Se ha devuelto', amount - amountToReturn);
+      i--;
+    }
+  }
+}
+
+getAvailableCash(2124.23);
