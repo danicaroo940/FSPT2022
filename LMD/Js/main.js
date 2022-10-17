@@ -25,4 +25,4 @@ function atm(amount) {
     }
   }
 }
-atm(40.40);
+atm(1340.43);
