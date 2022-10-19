@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="chat.css">
+    <link rel="shortcut icon" href="person.png" type="image/png">
+    <script src="chat.js"></script>
+    <title>Guasá</title>
+</head>
+<body>
+    <header class="head">
+        <div class="personal-photo">
+            <img class="photo" src="person.png" alt="">
+        </div>
+        <div class="personal-name">
+            Bartolo Firulais
+        </div>
+        <div class="personal-status">
+            ...
+        </div>
+    </header>
+    <main>
+        <div class="contacts-container">
+            <div class="contact-item" id="contact1"></div>
+            <div class="contact-item" id="contact2"></div>
+            <div class="contact-item" id="contact3"></div>
+            <div class="contact-item" id="contact4"></div>
+            <div class="contact-item" id="contact5"></div>
+        </div>
+        <div id="chat-container" class="chat-container">
+            <div class="message-in">Hola</div>
+            <div class="message-out">Hola</div>
+        </div>
+        <div class="chat-input">
+            <button class="button-input" onclick="sendText(1)">
+                <svg class="send-icon">
+                    <polygon fill="none" stroke="#000" stroke-width="1" points="13,11 13,29 30,20"></polygon>
+                </svg>
+            </button>
+            <input id="text-input1" class="text-input" type="text" placeholder=" user1 input" onkeypress="handleKeyPress(event,1)">
+            <input id="text-input2" class="text-input" type="text" placeholder=" user2 input" onkeypress="handleKeyPress(event,2)">
+            <button class="button-input" onclick="sendText(2)">
+                <svg class="send-icon">
+                    <polygon fill="none" stroke="#000" stroke-width="1" points="13,11 13,29 30,20"></polygon>
+                </svg>
+            </button>
+        </div>
+    </main>
+    <footer></footer>
+</body>
+</html>
