@@ -32,4 +32,4 @@ function retrieveMoney(amount) {
   console.log(hr);
 };
 
-retrieveMoney(1839.48);
+retrieveMoney(1239.48);
