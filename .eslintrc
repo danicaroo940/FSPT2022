@@ -4,9 +4,13 @@
     "es6": true,
     "browser": true
   },
+  "parserOptions": {
+    "ecmaVersion": 8
+  },
   "rules": {
+    "indent": ["error", 2],
     "no-console": "warn",
-    "semi": [2, "always"],
+    "semi": ["error", "always"],
     "prefer-const": "error",
     "quotes": ["error", "single"],
     "array-bracket-spacing": "error",
