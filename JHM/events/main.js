@@ -3,8 +3,8 @@ function onClickHandler(htmlTag) {
 }
 
 function onChangeHandler(event) {
-  console.log('PRESS! e', event)
-  console.log('PRESS! e.target.value', event.target.value)
+  console.log('PRESS! e', event);
+  console.log('PRESS! e.target.value', event.target.value);
 }
 
 const input = document.createElement('input');
