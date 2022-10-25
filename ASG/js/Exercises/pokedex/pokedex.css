@@ -1,0 +1,129 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+#root {
+    display:flex;
+    width:100%;
+    height: 100vh;
+}
+
+#primerHijo {
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction:column;
+    width:50%;
+    height:100vh;
+    border: 20px solid black;
+}
+
+#segundoHijo {
+    display:flex;
+    flex-direction:column;
+    justify-content: space-around;
+    align-items:center;
+    width:50%;
+    height:100vh;
+}
+
+#input {
+    width:200px;
+    height:30px;
+}
+
+#keyboardNumbers {
+    display:flex;
+    flex-wrap:wrap;
+    width:400px;
+    height:150px;
+}
+
+#keyboard {
+    display:flex;
+    flex-wrap:wrap;
+    width:400px;
+    height:200px;
+}
+
+.divNumber {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:80px;
+    height:75px;
+    background-color:rgb(58, 58, 58);
+    color:white;
+    border:2px solid rgb(180, 180, 180);
+    font-size:23px;
+    transition:all 0.3s;
+}
+
+.divNumber:hover {
+    scale: 1.05;
+    cursor:pointer;
+}
+
+.divKeys {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:50px;
+    height:50px;
+    border:2px solid rgb(180, 180, 180);
+    transition:all 0.3s;
+    background-color:rgb(58, 58, 58);
+    color:white;
+    font-size:20px;
+}
+
+.divKeys:hover {
+    scale: 1.05;
+    cursor:pointer;
+}
+
+#img {
+    position:absolute;
+    top:100px;
+    width: 390px;
+    height:420px;
+    animation: x 5s;
+}
+
+@keyframes x { 
+    0% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
+
+#name {
+    position:absolute;
+    bottom:100px;
+    font-size:20px;
+    animation: x 5s;
+}
+
+#intro {
+    flex-grow:2;
+}
+
+#delete {
+    flex-grow:2;
+}
+
+#pokemon {
+    flex-grow:2;
+}
+
+#pError {
+    position:absolute;
+    top:20px;
+    color:red;
+    font-size:20px;
+}
