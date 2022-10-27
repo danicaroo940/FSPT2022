@@ -5,7 +5,7 @@ function atm(i) {
   let take = i;
 
   for (; i > 0;) {
-    
+
     if(i>=50000){
       i = i - 50000;
       console.log('Has sacado un billete de 500 €');
@@ -98,5 +98,5 @@ function atm(i) {
     };
   };
   };
-  
-  atm(500.67);
+
+  atm(1423.48);

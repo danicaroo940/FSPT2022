@@ -9,7 +9,7 @@ function gt2(num) {
 const filteredNumbers1 = numbers.filter(gt2);
 console.log('filteredNumbers1', filteredNumbers1);
 
-const filteredNumbers2 = numbers.filter(function(num) { return num > 2; });
+const filteredNumbers2 = numbers.filter(function (num) { return num > 2; });
 console.log('filteredNumbers2', filteredNumbers2);
 
 const filteredNumbers3 = numbers.filter((num) => { return num > 2; });
@@ -62,7 +62,7 @@ const teacherToSpread = {
 
 const teacherWithSpread = {
   notSpreadedProp: 'notSpreadedProp',
-  ...teacherToSpread
+ ...teacherToSpread
 };
 
 console.log('teacherWithSpread', teacherWithSpread);

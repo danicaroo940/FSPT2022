@@ -5,7 +5,7 @@ function onKeyPress(e, pId, inputId) {
     p.innerHTML = e.target.value;
     const messageOne = document.getElementById('messages');
     messageOne.appendChild(p);
-    document.getElementById(inputId).value = "";
+    document.getElementById(inputId).value = '';
   }
 }
 
@@ -32,4 +32,4 @@ input2.setAttribute('type', 'text');
 input2.id = 'inputId2';
 input2.addEventListener('keypress', keyPressHandler);
 const container2 = document.getElementById('container');
-container2.appendChild(input2); 
+container2.appendChild(input2);
