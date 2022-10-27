@@ -14,3 +14,4 @@ input.addEventListener('keypress', onChangeHandler);
 // input.removeEventListener("change", onChangeHandler);
 const container = document.getElementById('container');
 container.appendChild(input);
+// porque no sale el valuecon el target.value???
