@@ -133,7 +133,7 @@ advancedArray.forEach((value, index) => { console.log(value, index); });
 
 // forIn
 console.log('----- forIn -----');
-for (let i in advancedArray) {
+for (const i in advancedArray) {
   console.log(advancedArray[i]);
 }
 
