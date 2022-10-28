@@ -1,0 +1,57 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+#root{
+    /* min-width: 100%;
+    min-height: 100%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main-left{
+    width: 35%;
+    min-height: 100vh;
+    background-color: lightblue;
+    display: flex;
+    flex-direction:column;
+    justify-content: space-around;
+    align-items:center
+
+}
+.main-right{
+    display: flex;
+    width: 65%;
+    min-height: 100vh;
+    background-color: lightcoral;
+}
+.funko-name{
+    width: 50%;
+    height: 4em;
+    text-align:center;
+
+}
+.funko-age {
+    width: 50%;
+    height: 4em;
+    text-align:center;
+
+}
+.carrousel-class {
+    border: 1px solid black;
+    width: 50%;
+    height: 12em;
+}
+.funko-text {
+    display: flex;
+    width: 70%;
+    height: 8em;
+    text-align:center;
+}
+.funko-button {
+border-radius: 2em;
+    margin-right: 5em;
+    width: 30%;
+    height: 2em;
+    align-self: flex-end;
+}

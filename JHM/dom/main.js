@@ -2,13 +2,13 @@
 const myElement = document.getElementById('myId');
 console.log('getElementById(myId)', myElement);
 
-const pElements= document.getElementsByTagName('p');
+const pElements = document.getElementsByTagName('p');
 console.log('getElementsByTagName(p)', pElements);
 
-const superElements= document.getElementsByClassName('super');
+const superElements = document.getElementsByClassName('super');
 console.log('getElementsByClassName(super)', superElements);
 
-const notSuperElements= document.getElementsByClassName('notSuper');
+const notSuperElements = document.getElementsByClassName('notSuper');
 console.log('getElementsByClassName(notSuper)', notSuperElements);
 
 const queryElement = document.querySelector('p.super');
@@ -84,4 +84,4 @@ function manageMinMax() {
   }
 }
 
-document.forms['myFormName']['myInputName'].addEventListener("change", manageMinMax);
+document.forms['myFormName']['myInputName'].addEventListener('change', manageMinMax);

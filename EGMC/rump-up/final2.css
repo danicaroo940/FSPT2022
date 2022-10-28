@@ -116,12 +116,14 @@ h1{
 .container{
     margin-bottom: 6em; ;
     background: url("https://imgs-akamai.mnstatic.com/54/96/5496ecfc1cf543f038ac857cae643cb1.jpg");
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 500px;
     height: 300px;
     overflow: hidden;
+    object-fit: cover;
 }
 .container:hover p{
     top: 0;
