@@ -5,7 +5,8 @@
     "browser": true
   },
   "parserOptions": {
-    "ecmaVersion": 8
+    "sourceType": "module",
+    "ecmaVersion": 2018
   },
   "rules": {
     "indent": ["error", 2],
