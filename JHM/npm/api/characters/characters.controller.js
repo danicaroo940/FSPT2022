@@ -80,11 +80,3 @@ function deleteById(req, res) {
 }
 
 export { getById, getByName, create, updateById, deleteById };
-
-// {
-//   "name": "Aragorn",
-//   "height": 1.80,
-//   "width": 80,
-//   "race": "human",
-//   "color": "???"
-// }
