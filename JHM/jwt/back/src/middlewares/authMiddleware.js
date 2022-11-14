@@ -30,6 +30,7 @@ function middleware(request, response, next) {
       return unauthorized(response);
     } else {
       request.username = payload.username;
+      request.userId = payload.id;
       next();
     }
   });

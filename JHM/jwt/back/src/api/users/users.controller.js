@@ -79,8 +79,7 @@ function deleteById(req, res) {
   }
 
   database.users.splice(indexToDelete, 1);
-  res.write('Deleted element');
-  res.end();
+  res.send('Deleted element');
 }
 
 export { getAll, getById, getByUsername, updateById, deleteById };
