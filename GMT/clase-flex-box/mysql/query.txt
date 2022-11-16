@@ -1,0 +1,196 @@
+LEYENDA ---- Los símbolos "<" y ">" indican lo que se debe introducir, NO SE APLICAN ESTOS SÍMBOLOS A LA QUERY
+
+//LIMPIAR LA CONSOLA DE MySQL
+\! cls
+
+
+TIPOS DE DATOS MÁS USADOS : VARCHAR(0-255), INT, FLOAT, BOOLEAN, DATE,DATETIME
+
+Lenguaje de Definición de Datos (DDL) => create, alter, drop,show
+
+Lenguaje de Manipulación de Datos (DML) => select, insert, update, delete
+
+//CREAR USUARIO
+CREATE USER 'John'@'localhost' IDENTIFIED BY '123456';
+
+
+//VER USUARIOS DISPONIBLES
+SELECT user, host FROM mysql.user;
+
+//MOSTRAR LAS BASES DISPONIBLES EN MySQL
+SHOW databases;
+
+
+//ELIMINAR USUARIOS
+DROP USER '<NOMBRE DE USUARIO>'@'localhost';
+
+
+//ENTRAR CON OTRO USUARIO Y CONRASEÑA 
+mysql -u <NOMBRE DE USUARIO> -p
+(En este caso, para acceder con otro usuario por consola debemos acceder a la carpeta donde tengamos instalado MySQL y acceder a la carpeta MySQL Server y dentro de esta acceder al archivo .bin y entonces introducir el comando especificado arriba)
+
+
+//OTORGAR PLENOS PRIVILEGIOS A UN USUARIO
+GRANT ALL PRIVILEGES ON * . * TO '<NOMBRE DE USUARIO>'@'localhost';
+
+
+//CREAR UNA BASE DE DATOS
+CREATE DATABASE myFirstDB;
+
+
+//ELIMINA LA BASE DE DATOS
+DROP DATABASE myFirstDB; 
+
+
+//SELECCIONA LA BASE DATOS
+USE myFirstDB;
+
+//MOSTRAR TABLAS
+SHOW TABLES;
+
+
+---TABLAS---
+
+//CREAR UNA TABLA (Ejemplo)
+CREATE TABLE users(
+id INT AUTO_INCREMENT,
+   	first_name VARCHAR(100),
+   	last_name VARCHAR(100),
+   	email VARCHAR(50),
+   	password VARCHAR(20),
+   	register_date DATETIME,
+   PRIMARY KEY(id)
+);
+
+
+
+//ELIMINA LA TABLA
+DROP TABLE users;
+
+
+//VACÍA LA TABLA SIN ELIMINARLA
+TRUNCATE TABLE <nombre de la tabla>;
+
+
+//VER LOS CAMPOS DE UNA TABLA
+SHOW COLUMNS FROM users;
+
+
+
+//AÑADIR COLUMNA A UNA TABLA
+ALTER TABLE users ADD age VARCHAR(3);
+
+
+//MODIFICAR TIPO DE DATO DE UNA COLUMNA
+ALTER TABLE users MODIFY COLUMN age INT(3);
+
+
+---SELECT & INSERT---
+
+SELECT es la palabra clave SQL que permite que la base de datos sepa que desea recuperar datos.
+INSERT inserta nuevas filas en una tabla existente
+
+
+INSERT INTO users (first_name, last_name, email, password, register_date) values ('John', 'Doe', 'john@gmail.com', '123456', now());
+
+INSERT INTO users (first_name, last_name, email, password, register_date) values ('Fred', 'Smith', 'fred@gmail.com', '123456', now()), ('Sara', 'Watson', 'sara@gmail.com', '123456',now());
+
+
+//SELECCIONAR TODOS LOS CAMPOS DE UNA TABLA
+SELECT * FROM users; //Select all
+
+
+//SELECCIONAR CAMPOS ESPECÍFICOS DE UNA TABLA
+SELECT first_name, last_name FROM users;
+
+
+
+---DELETE & UPDATE---
+
+En MySQL, podemos eliminar datos usando las declaraciones DELETE.
+La instrucción UPDATE se usa para cambiar el valor de las columnas en las filas seleccionadas de una tabla.(NO CONFUNDIR CON ALTER TABLE);
+
+
+//ACTUALIZAR LA EDAD DEL USUARIO CON ID 2
+UPDATE users SET age = 23 WHERE id = 2;
+
+
+//ACTUALIZAR LA EDAD DE VARIOS USUARIOS APLICANDO "IN"
+UPDATE users SET age = 25 WHERE id IN (1,2);
+
+
+//BORRAR UN USUARIO ESPECÍFICO
+DELETE FROM <nombre de tabla> WHERE id = 3;
+
+
+//BORRAR UNA COLUMNA DE UNA TABLA;
+ALTER TABLE <nombre de la tabla> DROP COLUMN <nombre de la columna>
+
+
+---WHERE & ORDER & BETWEEN---
+
+Una cláusula WHERE en SQL especifica que una declaración de lenguaje de manipulación de datos de SQL solo debe afectar a las filas que cumplen los criterios especificados.
+ORDER BY se utiliza para especificar el orden de clasificación del conjunto de resultados.
+La condición BETWEEN de MySQL se usa para recuperar valores dentro de un rango en una instrucción SELECT, INSERT, UPDATE o DELETE.
+
+
+//SELECCIONAR USUARIOS DE FORMA DESCENDENTE TOMANDO COMO REFERENCIA LA ID
+SELECT * FROM users ORDER BY id DESC;
+
+
+//SELECCIONAR USUARIOS CON EDADES ENTRE 20 Y 25 
+SELECT * FROM users WHERE age BETWEEN 20 AND 25;
+
+
+---DISTINCT & CONCATENATE
+
+DISTINCT va en contra de toda la fila de TODAS las columnas a excepción de la que indiquemos
+Con CONCATENATE puedes concatenar los valores mientras seleccionaS filas de la tabla.
+
+
+//CONCATEAR EN UNA COLUMNA NOMBRE Y APELLIDO COMO CAMPO "NAME"
+SELECT CONCAT(first_name, ' ', last_name) AS 'Name' FROM users;
+
+
+//SELECCIONAR SOLO CAMPO "AGE"
+SELECT DISTINCT <campo> FROM <tabla>;
+
+
+---LIKE & NOT LIKE---
+El operador LIKE & NOT LIKE en SQL se usa en una columna que es de tipo varchar. Por lo general, se usa con%, que se usa para representar cualquier valor de string. La string que pasamos a este operador no distingue entre mayúsculas y minúsculas.
+Se usa con WHERE para buscar un patrón específico en una columna.
+
+//Busca un usuario cuyo apellido contenga una 'a'.
+SELECT * FROM users WHERE last_name LIKE '%a%';
+
+
+//Busca un usuario cuyo first_name comience con 'm'.
+SELECT * FROM users WHERE first_name LIKE 'm%';
+
+
+//Busca un usuario cuyo first_name termine con 'd'.
+SELECT * FROM users WHERE first_name LIKE '%d';
+
+
+//Busca un usuario cuyo apellido no contenga 'r'.
+SELECT * FROM users WHERE last_name NOT LIKE '%r%';
+
+
+
+---AGREGGATE FUNCTIONS----
+
+SELECT COUNT(id) FROM users;
+
+SELECT MAX(age) FROM users;
+
+SELECT MIN(age) FROM users;
+
+SELECT SUM(age) FROM users;
+
+SELECT UCASE(first_name), LCASE(last_name) FROM users;
+
+
+---GROUP BY---
+
+SELECT age, COUNT(age) FROM users GROUP BY age;
+SELECT age, COUNT(age) FROM users WHERE age > 23 GROUP BY age;
