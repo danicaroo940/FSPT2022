@@ -1,0 +1,14 @@
+.myFlex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mySize {
+  width: 100px;
+  height: 100px;
+}
+
+.myBorder {
+  border: 1px solid black;
+}
