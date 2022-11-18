@@ -1,0 +1,31 @@
+--- WINDOWS ---
+
+INSTALADOR Download MySQL Community Server:
+
+https://dev.mysql.com/downloads/mysql/
+
+
+
+--- MacOS ---
+
+https://dev.mysql.com/downloads/mysql/ (Community Server)
+
+https://www.mysql.com/products/workbench/ (Workbench)
+
+
+---Opciones de instalación---
+
+Custom:
+
+Últimas versiones:
+
+-MySQL Server
+-MySQL Shell
+-MySQL Workbench
+
+
+Default:
+
+-Todos los paquetes
+
+

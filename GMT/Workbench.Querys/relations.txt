@@ -1,0 +1,115 @@
+----RELATIONS----
+
+Al crear una base de datos, el sentido común dicta que usemos tablas separadas para diferentes tipos de entidades. Algunos ejemplos son: clientes, pedidos, artículos, mensajes, etc ... Esto es debido a que, si no separáramos entidades por tablas estaríamos repitiendo datos innecesariamente a cada actualización o modificación de datos y además a nivel de rendimiento no sería óptimo.
+También necesitamos tener relaciones entre estas tablas. Por ejemplo, los clientes realizan pedidos y los pedidos contienen artículos. Estas relaciones deben estar representadas en la base de datos.
+
+
+---Primary key & Foreign key---
+
+La primary key consta de una o más columnas cuyos datos se utilizan para identificar de forma única cada fila de la tabla.
+Una foreign key es un conjunto de una o más columnas en una tabla que hace referencia a la clave principal en otra tabla.
+
+En SQL, hay tres tipos de relaciones: uno a uno (1:1), uno a muchos (1:N) o muchos a muchos (M:N) que se pueden modelar.
+
+
+EJEMPLOS:
+
+RELACIÓN POKEMON - TIPO  n:m
+
+RELACIÓN STORMTROOPERS - DARTH VADER n:1
+
+RELACIÓN DIRECTOR - PELÍCULA 1:n
+
+CLUB - JUGADOR  n:1
+
+RELACIÓN JUGADOR EQUIPO DE LOL - PERSONAJES DEL JUEGO 1:1
+
+
+
+---EJEMPLO CREACIÓN DE TABLA AÑADIENDO FK Y PK---
+
+CREATE TABLE posts(
+   id INT AUTO_INCREMENT,
+   user_id INT,
+   title VARCHAR(100),
+   body TEXT,
+   publish_date DATETIME DEFAULT CURRENT_TIMESTAMP,
+   PRIMARY KEY(id),
+   FOREIGN KEY (user_id) REFERENCES users(id) -------> "Se presupone que existe una tabla users"
+);
+
+(Insertamos datos en posts referenciados a usuarios)
+
+INSERT INTO posts(user_id, title, body) VALUES (1, 'Post One', 'This is post one'),
+(3, 'Post Two', 'This is post two'),
+(1, 'Post Three', 'This is post three'),
+(2, 'Post Four', 'This is post four'), 
+(1, 'Post Five','This is post five'),
+(2, 'Post Six', 'This is post six'),
+(1, 'Post Seven', 'This is post seven'),
+(3, 'Post Eight', 'This is post eight');
+
+
+
+---SQL JOINS---
+
+Unir varias tablas en la misma consulta SQL. Una cláusula JOIN se usa para combinar filas de dos o más tablas, según una columna relacionada entre ellas.
+
+//INNER JOIN
+
+Selecciona todas las filas de ambas tablas participantes siempre que haya una coincidencia entre las columnas.
+Une dos tablas de acuerdo con la coincidencia de ciertos criterios utilizando un operador de comparación.
+
+//QUERY INNER JOIN
+
+
+SELECT               -------------> Seleccionamos las columnas que deseamos ver
+  users.first_name,
+  users.last_name,
+  posts.title,
+  posts.publish_date
+FROM users         ----------------> Seleccionamos la tabla de la que vamos a partir y servirá de base.
+INNER JOIN posts   ----------------> Indicamos la tabla que queremos unir a la tabla base.
+ON users.id = posts.user_id; ------> Especificamos la condición para que muestre la información deseada. La id de la FK DEBE SER IGUAL a la id de la fila que estamos referenciando, en este caso el id del usuario
+
+
+
+COMPLIQUÉMOSLO UN POCO MÁS...
+
+//CREAMOS OTRA TABLA
+
+CREATE TABLE comments(
+	id INT AUTO_INCREMENT,
+	post_id INT,
+	user_id INT,
+	body TEXT,
+	PRIMARY KEY(id),
+	FOREIGN KEY(user_id) REFERENCES users(id),
+	FOREIGN KEY(post_id) REFERENCES posts(id)
+);
+
+
+(Insertamos datos para relacionar los comentarios al usuario que lo creó y al post al que va dirigido)
+
+
+INSERT INTO comments(post_id, user_id, body) VALUES 
+(1, 3, 'This is comment one'),
+(2, 1, 'This is comment two'),
+(5, 3, 'This is comment three'),
+(2, 2, 'This is comment four'),
+(1, 2, 'This is comment five');
+
+
+//UNIENDO TABLAS user, post y comments
+
+
+SELECT
+	comments.body,
+	posts.title,
+	users.first_name,
+	users.last_name
+FROM comments
+INNER JOIN posts ON posts.id = comments.post_id
+INNER JOIN users ON users.id = comments.user_id;
+
+

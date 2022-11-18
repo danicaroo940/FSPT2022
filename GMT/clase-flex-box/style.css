@@ -33,6 +33,7 @@
 
 .soy-el-padre-ahora {
   display: flex;
+  gap:1em;
   flex-basis: 100%;
   /* Es el tamaño del elemento hijo dentro de la línea de la caja flexbox
         Si la caja flexbox tiene dirección de fila, flex-basis representa el width
@@ -66,18 +67,19 @@
   flex-grow: 2;
   flex-shrink: 2;
   /* Cuando la caja flexbox NO tenga espacio sobrante, es la habilidad o el factor de encogerse, valor por defecto es 1, NO se aceptan valores negativos */
-  order: -1;
+  /* order: -1; */
 }
 
 .soy-el-padre-ahora div:nth-child(3) {
   flex: 1 1 auto;
+  /* order: -1; */
   /* Es un shorthand de las propiedades flex-grow flex-shrink y flex-basis, en ese orden*/
-  align-self: flex-start;
+  /* align-self: flex-start; */
   /* stretch | flex-start | flex-end | center | baseline */
   /* Sobreescribe el valor de la propiedad align-items sólo para el elemento hijo especificado */
 }
 
 .soy-el-padre-ahora div:nth-child(4) {
   flex-grow: 1;
-  align-self: flex-end;
+  /* align-self: flex-end; */
 }
