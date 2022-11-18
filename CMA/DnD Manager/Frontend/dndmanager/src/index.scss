@@ -1,0 +1,71 @@
+/* -------------------- GENERAL SETTINGS -------------------- */
+$headerHeight: 50px;
+$footerHeight: 100px;
+$rootFontSize: 16px;
+$rootFontFamily: Verdana, Geneva, Tahoma, sans-serif;
+
+$headerBG: brown;
+$mainBG: aqua;
+$footerBG: chocolate;
+
+:root {
+  font-size: $rootFontSize;
+  font-family: $rootFontFamily;
+}
+body {
+  margin: 0;
+}
+.root {
+  display: flex;
+  box-sizing: border-box;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  overflow-y: auto;
+}
+header {
+  position: relative;
+  width: 100%; 
+  height: $headerHeight;
+  background: $headerBG;
+}
+main {
+  position: relative;
+  width: 100%;
+  background: $mainBG;
+}
+footer {
+  position: relative;
+  width: 100%;
+  height: $footerHeight;
+  background: $footerBG;
+}
+.flx-row {
+  display: flex;
+  box-sizing: border-box;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+  margin: 0;
+}
+.flx-col {
+  display: flex;
+  box-sizing: border-box;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  border: 0;
+  margin: 0;
+}
+.left-panel {
+  width: 25%;
+  height: 100%;
+  background-color: lightcoral;
+}
+.right-panel {
+  width: 75%;
+  height: 100%;
+  background-color: lightblue;
+}
