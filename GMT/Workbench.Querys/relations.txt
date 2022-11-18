@@ -6,10 +6,10 @@ También necesitamos tener relaciones entre estas tablas. Por ejemplo, los clien
 
 ---Primary key & Foreign key---
 
-La primary key consta de una o más columnas cuyos datos se utilizan para identificar de forma única cada fila de la tabla.
-Una foreign key es un conjunto de una o más columnas en una tabla que hace referencia a la clave principal en otra tabla.
+La primary key consta de una columna cuyos datos se utilizan para identificar de forma única cada fila de la tabla.
+Una foreign key es un conjunto de una o más columnas en una tabla que hace referencia a la primary key en otra tabla.
 
-En SQL, hay tres tipos de relaciones: uno a uno (1:1), uno a muchos (1:N) o muchos a muchos (M:N) que se pueden modelar.
+En SQL, hay tres tipos de relaciones: uno a uno (1:1), uno a muchos (1:N) y muchos a muchos (M:N)
 
 
 EJEMPLOS:
