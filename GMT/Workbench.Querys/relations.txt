@@ -113,3 +113,21 @@ INNER JOIN posts ON posts.id = comments.post_id
 INNER JOIN users ON users.id = comments.user_id;
 
 
+//LEFT JOIN
+
+Toma como preferencia la tabla que está más a la izquierda (la que coloquemos después de FROM);
+Mostrará los datos de dicha tabla tenga coincidencias o no.
+
+
+SELECT
+	comments.body,
+	posts.title,
+	users.first_name,
+	users.last_name
+FROM comments
+LEFT JOIN posts ON posts.id = comments.post_id
+LEFT JOIN users ON users.id = comments.user_id;
+
+//RIGHT JOIN
+
+Toma como preferencia la tabla que está más a la derecha. Mostrará los datos de dicha tabla tenga coincidencias o no. Ejemplo: Tenemos una clínica veterinaria y entra un nuevo animal pero no se le asigna veterinario; si mostramos las tablas veterinario/animal con un RIGHT JOIN mostrará el animal y null en el lado de la tabla veterinario
