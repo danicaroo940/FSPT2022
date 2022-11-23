@@ -6,14 +6,17 @@ import { MySQL } from '../main/database.js'
 //     name VARCHAR(100) NOT NULL,
 //     gender VARCHAR(100) NOT NULL,
 //     level INT NOT NULL DEFAULT 1,
-//     class VARCHAR(100) NOT NULL
-//   );`;
-
-// async function getTable() {
-//   MySQL.query(characterTable, (err, res) => {
-//     if (err) {return console.error("Query to MySQL error: " + err.message)}
-//   });
-// }
+//     class VARCHAR(100) NOT NULL,
+//     username VARCHAR(100) NOT NULL DEFAULT "admin"
+//   );
+//   INSERT INTO characters( name, gender, class) VALUES
+//   ("Jason", "Male", "Mage"),
+//   ("Alaina", "Female", "Rogue"),
+//   ("Thormund", "Male", "Warrior"),
+//   ("Glosh'kog", "Female", "Monk"),
+//   ("Zarya", "Male", "Priest"),
+//   ("Campbell", "Female", "Palladin");
+//   `;
 
 async function queryMySQL(query, callback) {
   MySQL.query(query, (err, res) => {

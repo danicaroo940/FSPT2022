@@ -4,8 +4,7 @@ import userModel from '../database/usersMongoDB.js';
 
 function auth(req, res, next) {
   if ((req.url === "/login" || req.url === "/register") && req.method === "POST") {
-    next();
-    return;
+    return next();
   }
 
   const { authorization } = req.headers;
@@ -19,7 +18,7 @@ function auth(req, res, next) {
       req.username = payload.username;
       req.role = payload.role;
       console.log("Token validated.")
-      next();
+      return next();
     }
   })
 }

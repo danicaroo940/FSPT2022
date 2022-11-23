@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors';
 import * as auth from '../auth/auth.js'
 import middleware from './middleware.js';
 import router from './router.js';
@@ -10,6 +11,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(express.json());
+app.use(cors({origin: 'http://localhost:5173'}));
 app.use(auth.auth);
 app.use(middleware);
 app.use(router);

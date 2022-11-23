@@ -1,0 +1,94 @@
+$width: 200px;
+$background: rgba($color: #ff6868, $alpha: 1.0);
+$text-color: rgba($color: #ffffff, $alpha: 1.0);
+$font-size: 0.8rem;
+$line-height: 1.5rem;
+$border: none;
+$border-radius: 0px;
+$button-background: rgba($color: #ffffff, $alpha: 1.0);
+$button-bg-hover: rgba($color: #b6b6b6, $alpha: 1.0);
+
+.LoginForm-logged {
+  display: flex;
+  position: relative;
+  box-sizing: border-box;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  width: $width;
+  background: $background;
+  font-size: $font-size;
+  line-height: $line-height;
+  color: $text-color;
+  border: $border;
+  border-radius: $border-radius;
+  padding-top: 10px;
+}
+
+.LoginForm-logged button {
+  width: calc(0.8*$width);
+  margin-bottom: 10px;
+  font-size: inherit;
+  line-height: inherit;
+  border: none;
+  background: $button-background;
+}
+
+.LoginForm-logged button:hover {
+  background: $button-bg-hover;
+  border: none;
+}
+
+.LoginForm-logged p {
+  width: calc(0.8*$width);
+  margin-top: 0px;
+  text-align: center;
+}
+
+
+.LoginForm-login {
+  display: flex;
+  position: relative;
+  box-sizing: border-box;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  width: $width;
+  background: $background;
+  font-size: $font-size;
+  line-height: $line-height;
+  color: $text-color;
+  border: $border;
+  border-radius: $border-radius;
+  padding-top: 10px;
+}
+
+.LoginForm-login button {
+  width: calc(0.8*$width);
+  margin-bottom: 10px;
+  font-size: inherit;
+  line-height: inherit;
+  border: none;
+  background: $button-background;
+}
+
+.LoginForm-login button:hover {
+  background: $button-bg-hover;
+  border: none;
+}
+
+.LoginForm-login input {
+  border: none;
+  margin-bottom: 10px;
+  padding: 2px 0;
+  font-size: inherit;
+  line-height: 150%;
+  width: calc(0.8*$width);
+  text-indent: 5px;
+}
+
+.LoginForm-login p {
+  width: calc(0.8*$width);
+  margin-top: 0px;
+  text-align: center;
+}

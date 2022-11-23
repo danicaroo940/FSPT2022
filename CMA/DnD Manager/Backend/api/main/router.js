@@ -6,8 +6,8 @@ import charactersRouter from '../routers/characters.router.js';
 
 const router = Router();
 
-router.use('/login', auth.login);
-router.use('/register', auth.register);
+router.post('/login', auth.login);
+router.post('/register', auth.register);
 
 router.use('/users', usersRouter);
 router.use('/characters', charactersRouter);
