@@ -1,0 +1,332 @@
+LEYENDA ---- Los símbolos "<" y ">" indican lo que se debe introducir, NO SE APLICAN ESTOS SÍMBOLOS A LA QUERY
+
+//LIMPIAR LA CONSOLA DE MySQL
+\! cls
+
+
+TIPOS DE DATOS MÁS USADOS : VARCHAR(0-255), INT, FLOAT, BOOLEAN, DATE,DATETIME
+
+Lenguaje de Definición de Datos (DDL) => create, alter, drop, show
+
+Lenguaje de Manipulación de Datos (DML) => select, insert, update, delete
+
+//CREAR USUARIO
+CREATE USER 'John'@'localhost' IDENTIFIED BY '123456';
+
+
+//VER USUARIOS DISPONIBLES
+SELECT user, host FROM mysql.user;
+
+//MOSTRAR LAS BASES DISPONIBLES EN MySQL
+SHOW databases;
+
+
+//ELIMINAR USUARIOS
+DROP USER '<NOMBRE DE USUARIO>'@'localhost';
+
+
+//ENTRAR CON OTRO USUARIO Y CONRASEÑA 
+mysql -u <NOMBRE DE USUARIO> -p
+(En este caso, para acceder con otro usuario por consola debemos acceder a la carpeta donde tengamos instalado MySQL y acceder a la carpeta MySQL Server y dentro de esta acceder al archivo .bin y entonces introducir el comando especificado arriba)
+
+
+//OTORGAR PLENOS PRIVILEGIOS A UN USUARIO
+GRANT ALL PRIVILEGES ON * . * TO '<NOMBRE DE USUARIO>'@'localhost';
+
+
+//CREAR UNA BASE DE DATOS
+CREATE DATABASE myFirstDB;
+
+
+//ELIMINA LA BASE DE DATOS
+DROP DATABASE myFirstDB; 
+
+
+//SELECCIONA LA BASE DATOS
+USE myFirstDB;
+
+//MOSTRAR TABLAS
+SHOW TABLES;
+
+
+---TABLAS---
+
+//CREAR UNA TABLA (Ejemplo)
+CREATE TABLE users(
+id INT AUTO_INCREMENT,
+   	first_name VARCHAR(100),
+   	last_name VARCHAR(100),
+   	email VARCHAR(50),
+   	password VARCHAR(20),
+   	register_date DATETIME,
+   PRIMARY KEY(id)
+);
+
+
+
+//ELIMINA LA TABLA
+DROP TABLE users;
+
+
+//VACÍA LA TABLA SIN ELIMINARLA
+TRUNCATE TABLE <nombre de la tabla>;
+
+
+//VER LOS CAMPOS DE UNA TABLA
+SHOW COLUMNS FROM users;
+
+
+
+//AÑADIR COLUMNA A UNA TABLA
+ALTER TABLE users ADD age VARCHAR(3);
+
+
+//MODIFICAR TIPO DE DATO DE UNA COLUMNA
+ALTER TABLE users MODIFY COLUMN age INT(3);
+
+
+---SELECT & INSERT---
+
+SELECT es la palabra clave SQL que permite que la base de datos sepa que desea recuperar datos.
+INSERT inserta nuevas filas en una tabla existente
+
+
+INSERT INTO users (first_name, last_name, email, password, register_date) values ('John', 'Doe', 'john@gmail.com', '123456', now());
+
+INSERT INTO users (first_name, last_name, email, password, register_date) values ('Fred', 'Smith', 'fred@gmail.com', '123456', now()), ('Sara', 'Watson', 'sara@gmail.com', '123456',now());
+
+
+//SELECCIONAR TODOS LOS CAMPOS DE UNA TABLA
+SELECT * FROM users; //Select all
+
+
+//SELECCIONAR CAMPOS ESPECÍFICOS DE UNA TABLA
+SELECT first_name, last_name FROM users;
+
+
+
+---DELETE & UPDATE---
+
+En MySQL, podemos eliminar datos usando las declaraciones DELETE.
+La instrucción UPDATE se usa para cambiar el valor de las columnas en las filas seleccionadas de una tabla.(NO CONFUNDIR CON ALTER TABLE);
+
+
+//ACTUALIZAR LA EDAD DEL USUARIO CON ID 2
+UPDATE users SET age = 23 WHERE id = 2;
+
+
+//ACTUALIZAR LA EDAD DE VARIOS USUARIOS APLICANDO "IN"
+UPDATE users SET age = 25 WHERE id IN (1,2);
+
+
+//BORRAR UN USUARIO ESPECÍFICO
+DELETE FROM <nombre de tabla> WHERE id = 3;
+
+
+//BORRAR UNA COLUMNA DE UNA TABLA;
+ALTER TABLE <nombre de la tabla> DROP COLUMN <nombre de la columna>
+
+
+---WHERE & ORDER & BETWEEN---
+
+Una cláusula WHERE en SQL especifica que una declaración de lenguaje de manipulación de datos de SQL solo debe afectar a las filas que cumplen los criterios especificados.
+ORDER BY se utiliza para especificar el orden de clasificación del conjunto de resultados.
+La condición BETWEEN de MySQL se usa para recuperar valores dentro de un rango en una instrucción SELECT, INSERT, UPDATE o DELETE.
+
+
+//SELECCIONAR USUARIOS DE FORMA DESCENDENTE TOMANDO COMO REFERENCIA LA ID
+SELECT * FROM users ORDER BY id DESC;
+
+
+//SELECCIONAR USUARIOS CON EDADES ENTRE 20 Y 25 
+SELECT * FROM users WHERE age BETWEEN 20 AND 25;
+
+
+---DISTINCT & CONCATENATE
+
+DISTINCT va en contra de toda la fila de TODAS las columnas a excepción de la que indiquemos
+Con CONCATENATE puedes concatenar los valores mientras seleccionaS filas de la tabla.
+
+
+//CONCATEAR EN UNA COLUMNA NOMBRE Y APELLIDO COMO CAMPO "NAME"
+SELECT CONCAT(first_name, ' ', last_name) AS 'Name' FROM users;
+
+
+//SELECCIONAR SOLO CAMPO "AGE"
+SELECT DISTINCT <campo> FROM <tabla>;
+
+
+---LIKE & NOT LIKE---
+El operador LIKE & NOT LIKE en SQL se usa en una columna que es de tipo varchar. Por lo general, se usa con%, que se usa para representar cualquier valor de string. La string que pasamos a este operador no distingue entre mayúsculas y minúsculas.
+Se usa con WHERE para buscar un patrón específico en una columna.
+
+//Busca un usuario cuyo apellido contenga una 'a'.
+SELECT * FROM users WHERE last_name LIKE '%a%';
+
+
+//Busca un usuario cuyo first_name comience con 'm'.
+SELECT * FROM users WHERE first_name LIKE 'm%';
+
+
+//Busca un usuario cuyo first_name termine con 'd'.
+SELECT * FROM users WHERE first_name LIKE '%d';
+
+
+//Busca un usuario cuyo apellido no contenga 'r'.
+SELECT * FROM users WHERE last_name NOT LIKE '%r%';
+
+
+
+---AGREGGATE FUNCTIONS----
+
+SELECT COUNT(id) FROM users;
+
+SELECT MAX(age) FROM users;
+
+SELECT MIN(age) FROM users;
+
+SELECT SUM(age) FROM users;
+
+SELECT UCASE(first_name), LCASE(last_name) FROM users;
+
+
+---GROUP BY---
+
+SELECT age, COUNT(age) FROM users GROUP BY age;
+SELECT age, COUNT(age) FROM users WHERE age > 23 GROUP BY age;
+
+
+
+----RELATIONS----
+
+Al crear una base de datos, el sentido común dicta que usemos tablas separadas para diferentes tipos de entidades. Algunos ejemplos son: clientes, pedidos, artículos, mensajes, etc ... Esto es debido a que, si no separáramos entidades por tablas estaríamos repitiendo datos innecesariamente a cada actualización o modificación de datos y además a nivel de rendimiento no sería óptimo.
+También necesitamos tener relaciones entre estas tablas. Por ejemplo, los clientes realizan pedidos y los pedidos contienen artículos. Estas relaciones deben estar representadas en la base de datos.
+
+
+---Primary key & Foreign key---
+
+La primary key consta de una o más columnas cuyos datos se utilizan para identificar de forma única cada fila de la tabla.
+Una foreign key es un conjunto de una o más columnas en una tabla que hace referencia a la clave principal en otra tabla.
+
+En SQL, hay tres tipos de relaciones: uno a uno (1:1), uno a muchos (1:N) o muchos a muchos (M:N) que se pueden modelar.
+
+
+EJEMPLOS:
+
+RELACIÓN POKEMON - TIPO
+
+RELACIÓN STORMTROOPERS - DARTH VADER
+
+RELACIÓN DIRECTOR - PELÍCULA
+
+CLUB - JUGADOR
+
+RELACIÓN JUGADOR EQUIPO DE LOL - PERSONAJES DEL JUEGO
+
+
+
+---EJEMPLO CREACIÓN DE TABLA AÑADIENDO FK Y PK---
+
+CREATE TABLE posts(
+   id INT AUTO_INCREMENT,
+   user_id INT,
+   title VARCHAR(100),
+   body TEXT,
+   publish_date DATETIME DEFAULT CURRENT_TIMESTAMP,
+   PRIMARY KEY(id),
+   FOREIGN KEY (user_id) REFERENCES users(id) -------> "Se presupone que existe una tabla users"
+);
+
+(Insertamos datos en posts referenciados a usuarios)
+
+INSERT INTO posts(user_id, title, body) VALUES (1, 'Post One', 'This is post one'),
+(3, 'Post Two', 'This is post two'),
+(1, 'Post Three', 'This is post three'),
+(2, 'Post Four', 'This is post four'), 
+(1, 'Post Five','This is post five'),
+(2, 'Post Six', 'This is post six'),
+(1, 'Post Seven', 'This is post seven'),
+(3, 'Post Eight', 'This is post eight');
+
+
+
+---SQL JOINS---
+
+Unir varias tablas en la misma consulta SQL. Una cláusula JOIN se usa para combinar filas de dos o más tablas, según una columna relacionada entre ellas.
+
+//INNER JOIN
+
+Selecciona todas las filas de ambas tablas participantes siempre que haya una coincidencia entre las columnas.
+Une dos tablas de acuerdo con la coincidencia de ciertos criterios utilizando un operador de comparación.
+
+//QUERY INNER JOIN
+
+
+SELECT               -------------> Seleccionamos las columnas que deseamos ver
+  users.first_name,
+  users.last_name,
+  posts.title,
+  posts.publish_date
+FROM users         ----------------> Seleccionamos la tabla de la que vamos a partir y servirá de base.
+INNER JOIN posts   ----------------> Indicamos la tabla que queremos unir a la tabla base.
+ON users.id = posts.user_id; ------> Especificamos la condición para que muestre la información deseada. La id de la FK debe ser igual a la id del usuario
+
+
+
+COMPLIQUÉMOSLO UN POCO MÁS...
+
+//CREAMOS OTRA TABLA
+
+CREATE TABLE comments(
+	id INT AUTO_INCREMENT,
+	post_id INT,
+	user_id INT,
+	body TEXT,
+	PRIMARY KEY(id),
+	FOREIGN KEY(user_id) REFERENCES users(id),
+	FOREIGN KEY(post_id) REFERENCES posts(id)
+);
+
+
+(Insertamos datos para relacionar los comentarios al usuario que lo creó y al post al que va dirigido)
+
+
+INSERT INTO comments(post_id, user_id, body) VALUES 
+(1, 3, 'This is comment one'),
+(2, 1, 'This is comment two'),
+(5, 3, 'This is comment three'),
+(2, 2, 'This is comment four'),
+(1, 2, 'This is comment five');
+
+
+//UNIENDO TABLAS user, post y comments
+
+
+SELECT
+	comments.body,
+	posts.title,
+	users.first_name,
+	users.last_name
+FROM comments
+INNER JOIN posts ON posts.id = comments.post_id
+INNER JOIN users ON users.id = comments.user_id;
+
+
+SITUACIONES A ELEGIR:
+
+1) En una clínica veterinaria, un/a veterinari@ se le asigna una mascota para que la atienda. Esta mascota tiene un dueño, que necesitamos conocer para avisarlo en casos especiales.
+
+2)En una librería Online se venden libros. Cada libro pertenece a un departamento. Los cliente exploran nuestro catálogo de libros, selecciona libros y los colocan en la cesta de la compra. Al finalizar la compra, la cesta de la compra se convierte es un pedido efectivo que se envía al cliente.
+
+3)Se desea diseñar la base de datos de un Instituto. En la base de datos se desea guardar los datos de los profesores del Instituto (DNI, nombre, dirección y teléfono). 
+Los profesores imparten módulos, y cada módulo tiene un código y un nombre. Cada alumno puede cursar uno o varios módulos. 
+De cada alumno se desea guardar el nº de expediente, nombre, apellidos y fecha de nacimiento. Los profesores pueden impartir varios módulos, pero un módulo sólo puede ser impartido por un profesor. Cada curso tiene un grupo de alumnos, uno de los cuales es el delegado del grupo.
+
+4)En una red social un usuario puede crear varias publicaciones. Las publicaciones tienen comentarios y esos comentarios los hacen los usuarios.
+
+
+
+
+
+
+

@@ -1,0 +1,9 @@
+1) En una clínica veterinaria, un/a veterinari@ se le asigna una mascota para que la atienda. Esta mascota tiene un dueño, que necesitamos conocer para avisarlo en casos especiales.
+
+2)En una librería Online se venden libros. Cada libro pertenece a un departamento. Los cliente exploran nuestro catálogo de libros, selecciona libros y los colocan en la cesta de la compra. Al finalizar la compra, la cesta de la compra se convierte es un pedido efectivo que se envía al cliente.
+
+3)Se desea diseñar la base de datos de un Instituto. En la base de datos se desea guardar los datos de los profesores del Instituto (DNI, nombre, dirección y teléfono). 
+Los profesores imparten módulos, y cada módulo tiene un código y un nombre. Cada alumno puede cursar uno o varios módulos. 
+De cada alumno se desea guardar el nº de expediente, nombre, apellidos y fecha de nacimiento. Los profesores pueden impartir varios módulos, pero un módulo sólo puede ser impartido por un profesor. Cada curso tiene un grupo de alumnos, uno de los cuales es el delegado del grupo.
+
+4)En una red social un usuario puede crear varias publicaciones. Las publicaciones tienen comentarios y esos comentarios los hacen los usuarios.
