@@ -27,10 +27,10 @@ function LoginForm() {
   const handleResize = () => {
     if (window.innerWidth < 600) {
       console.log(window.innerWidth);
-      console.log("Pequeño");
+      console.log("pequeño");
     } else {
       console.log(window.innerWidth);
-      console.log("Grande");
+      console.log("grande");
     }
   }
 
