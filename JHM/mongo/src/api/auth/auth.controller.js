@@ -2,7 +2,7 @@ import { hashSync } from 'bcrypt';
 import * as authBll from './auth.bll.js';
 import database from '../../database/database.js';
 
-function login(req, res) {
+async function login(req, res) {
   const { username, password } = req.body;
   let token;
 
@@ -13,7 +13,7 @@ function login(req, res) {
   }
 
   try {
-    token = authBll.login({ username, password });
+    token = await authBll.login({ username, password });
   } catch(err) {
     console.log(err)
     res.status(500);
@@ -23,22 +23,24 @@ function login(req, res) {
   res.json({ token });
 }
 
-function register(req, res) {
+async function register(req, res) {
   const { username, password } = req.body;
+  let token;
+
   if (!username || !password) {
     res.status(400);
     res.send('Empty required params');
     return;
   }
 
-  const user = {
-    id: `${username}Id`,
-    username,
-    password: hashSync(password, 10)
-  };
+  try {
+    token = await authBll.register({ username, password });
+  } catch(err) {
+    console.log(err)
+    res.status(500);
+    res.send(err.message);
+  }
 
-  database.users.push(user);
-  const token = getToken(user);
   res.json({ token });
 }
 
