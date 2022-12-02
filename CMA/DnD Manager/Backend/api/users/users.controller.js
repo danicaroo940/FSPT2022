@@ -1,5 +1,5 @@
 import sha256 from 'crypto-js/sha256.js';
-import userModel from "../database/usersMongoDB.js";
+import userModel from "./users.model.js";
 
 function errResponse(res, status, message) {
   res.status(status);

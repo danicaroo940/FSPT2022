@@ -1,10 +1,10 @@
 import express from 'express';
 import cors from 'cors';
-import * as auth from '../auth/auth.js'
+import * as auth from './auth.js'
 import middleware from './middleware.js';
 import router from './router.js';
 import * as dotenv from 'dotenv';
-import { connectMongoDB, connectMySQL } from './database.js';
+import * as DB from '../database/database.connection.js';
 
 dotenv.config();
 const app = express();
@@ -25,5 +25,5 @@ process.on("unhandledRejection", err => {
   server.close(() => process.exit(1))
 })
 
-connectMongoDB();
-connectMySQL();
+DB.connectMongoDB('main');
+DB.connectMySQL('main');

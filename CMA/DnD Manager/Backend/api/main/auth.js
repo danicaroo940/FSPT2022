@@ -1,6 +1,7 @@
 import jwt from 'jsonwebtoken';
 import sha256 from 'crypto-js/sha256.js';
-import userModel from '../database/usersMongoDB.js';
+import userModel from '../users/users.model.js';
+import { ObjectId } from 'mongodb';
 
 function auth(req, res, next) {
   if ((req.url === "/login" || req.url === "/register") && req.method === "POST") {
@@ -15,7 +16,7 @@ function auth(req, res, next) {
       console.error('ERROR:', error.message);
       return errResponse(res, 401, "Invalid token.")
     } else {
-      req.username = payload.username;
+      req.user = payload.user;
       req.role = payload.role;
       console.log("Token validated.")
       return next();
@@ -31,7 +32,7 @@ async function login(req, res) {
     try {
       const getUser = await userQuery({email:id, password:encryptedPassword})
       if (!getUser) {return errResponse(res, 401, "Wrong user / password.")};
-      const token = getToken({username:getUser.username, role:getUser.role});
+      const token = getToken({user:getUser._id.toString(), role:getUser.role});
       res.json({ token });
     }
     catch {return errResponse(res, 400, err)}
@@ -39,7 +40,7 @@ async function login(req, res) {
     try {
       const getUser = await userQuery({username:id, password:encryptedPassword})
       if (!getUser) {return errResponse(res, 401, "Wrong user / password.")};
-      const token = getToken({username:getUser.username, role:getUser.role});
+      const token = getToken({user:getUser._id.toString(), role:getUser.role});
       res.json({ token });
     }
     catch {return errResponse(res, 400, err)}
@@ -72,17 +73,17 @@ async function register(req, res) {
   try {
     await userModel.create({username, password:encryptedPassword, email, role});
     const getUser = await userQuery({username});
-    const token = getToken({username:getUser.username, role:getUser.role});
+    const token = getToken({user:getUser._id.toString(), role:getUser.role});
     res.json({ token });
   } catch (err) {return errResponse(res, 400, err)};
 }
 
 async function adminRole(req, res, next) {
-  const username = req.username;
+  const user = req.user;
   const role = req.role;
   if (role === "admin") {
     try {
-      const getUser = await userQuery({username});
+      const getUser = await userQuery({_id:ObjectId(user)});
       if (getUser.role === "admin") {
         console.log("Admin access granted.")
         next();
@@ -103,7 +104,7 @@ async function userQuery(userObj) {
 
 function getToken(user) {
   const payload = {
-    username: user.username,
+    user: user.user,
     role: user.role
   };
 

@@ -21,23 +21,20 @@ async function customFetch(url, method, body, token) {
   if (method === ('POST' || 'PUT' || 'DELETE')) {config.body = JSON.stringify(body)}
   if (token !== (undefined || '')) {config.headers.authorization = token}
 
-  const fetched = await fetch(getUrl, config);
-  const status = fetched.status;
-  const parsed = await fetched.json();
-  const response = {status: status, data: parsed};
-  return response;
+  const login = await fetch(getUrl, config);
+  const data = await login.json();
+  return {status: login.status, data: data};
 }
 
 async function verifyLogin(inputs) {
-  let response;
   const fetchToken = await serverPost('login', inputs, '');
   if (fetchToken.status === 200) {
     sessionStorage.setItem('sessionToken', fetchToken.data.token);
     const fetchUser = await serverGet('users/'+inputs.id, '', fetchToken.data.token).then(res => res.data.username);
-    response = {display:false, message:`Bienvenido ${fetchUser}`};
+    return {message:`Bienvenido ${fetchUser}`};
   }
-  if (fetchToken.status === 400) {response = {display:true, message:'Introduzca usuario y contraseña.'}}
-  if (fetchToken.status === 401) {response = {display:true, message: 'Usuario y/o contraseña incorrectos.'}}
+  if (fetchToken.status === 400) {return {message:'Introduzca usuario y contraseña.'}}
+  if (fetchToken.status === 401) {return {message: 'Usuario y/o contraseña incorrectos.'}}
   return response;
 }
 
