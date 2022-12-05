@@ -1,4 +1,3 @@
-
 import Router from 'express';
 import * as charactersController from './characters.controller.js';
 
@@ -15,7 +14,7 @@ router.get(
 );
 
 router.get(
-  '/:id',
+  '/:characterId',
   charactersController.getById,
 );
 
@@ -25,12 +24,12 @@ router.post(
 );
 
 router.put(
-  '/:id',
+  '/:characterId',
   charactersController.updateById,
 );
 
 router.delete(
-  '/:id',
+  '/:characterId',
   charactersController.deleteById,
 );
 

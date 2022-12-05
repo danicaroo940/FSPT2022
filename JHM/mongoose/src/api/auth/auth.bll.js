@@ -1,11 +1,10 @@
 import jwt from 'jsonwebtoken';
-import { hashSync, compare } from 'bcrypt';
-import * as usersRepository from '../users/users.repository.js'
-// import database from '../../database/database.js';
+import { hashSync, compare, compareSync } from 'bcrypt';
+import * as usersRepository from '../users/users.repository.js';
 
 function getToken(user) {
   const payload = {
-    id: user._id,
+    userId: user._id,
     username: user.username
   };
 
@@ -18,30 +17,36 @@ function getToken(user) {
 }
 
 async function login({ username, password }) {
-  const user = await usersRepository.getByUsername({username});
-  if (!user) {
+  const dbUser = await usersRepository.getByUsername({username});
+  if (!dbUser) {
     throw new Error('Wrong credentials');
   }
 
-  const isSamePassword = await compare(password, user.password);
-  // const isSamePassword = user.password === hashSync(password, 10);
-
+  const isSamePassword = compareSync(password, dbUser.password);
   if (!isSamePassword) {
     throw new Error('Wrong credentials');
   }
 
-  const token = getToken({ username : user.username, _id: user._id });
+  const token = getToken({ username: dbUser.username, _id: dbUser._id });
+  if (!token) {
+    throw new Error('Some problem generating token');
+  }
+
   return token;
 }
 
 async function register({ username, password }) {
   const hashedPassword = hashSync(password, 10);
-  const user = await usersRepository.insert({ username, password: hashedPassword });
-  if (!user) {
+  const dbUser = await usersRepository.insert({ username, password: hashedPassword });
+  if (!dbUser) {
     throw new Error('Some problem at insert');
   }
 
-  const token = getToken({ username : user.username, _id: user._id });
+  const token = getToken({ username : dbUser.username, _id: dbUser._id });
+  if (!token) {
+    throw new Error('Some problem generating token');
+  }
+
   return token;
 }
 

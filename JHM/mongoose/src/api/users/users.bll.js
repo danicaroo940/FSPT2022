@@ -1,4 +1,4 @@
-import * as charactersRepo from './characters.repository.js';
+import * as charactersRepo from './users.repository.js';
 
 async function getAll({ userId }) {
   const characters = await charactersRepo.getAll({ userId });

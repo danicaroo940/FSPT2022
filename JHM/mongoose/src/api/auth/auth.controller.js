@@ -1,5 +1,4 @@
 import * as authBll from './auth.bll.js';
-// import database from '../../database/database.js';
 
 async function login(req, res) {
   const { username, password } = req.body;
@@ -14,7 +13,7 @@ async function login(req, res) {
   try {
     token = await authBll.login({ username, password });
   } catch(err) {
-    res.status(500);
+    res.status(err.status);
     res.send(err.message);
   }
 

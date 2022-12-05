@@ -1,5 +1,7 @@
 import { Schema, model } from "mongoose";
-const ObjectId = Schema.Types.ObjectId;
+
+const { ObjectId } = Schema.Types;
+
 const characterSchema = new Schema({
   name: {
     type: String,
