@@ -11,15 +11,14 @@ function middleware(request, response, next) {
     '/register'
   ];
 
-  // const isPublicRoute = publicRoutes.includes(request.url);
+  const isDocsRoute = request.url.includes('/docs');
   const isPublicRoute = publicRoutes.some((publicRoute) => publicRoute === request.url);
-  if (isPublicRoute) {
+  if (isPublicRoute || isDocsRoute) {
     next();
     return;
   }
 
   const token = request.headers.authorization;
-
   if (!token) {
     return unauthorized(response);
   }
@@ -31,7 +30,12 @@ function middleware(request, response, next) {
     }
 
     request.username = payload.username;
-    request.userId = payload.id;
+    request.userId = payload.userId;
+
+    // const username = payload.username;
+    // const user = usersBll.getByUsername(username);
+    // user.permissions.characters.all || user.role.superadmin
+    // // request.userId = payload.id;
     next();
   });
 }

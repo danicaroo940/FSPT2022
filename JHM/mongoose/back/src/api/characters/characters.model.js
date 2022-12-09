@@ -6,6 +6,7 @@ const characterSchema = new Schema({
   name: {
     type: String,
     required: true,
+    // unique: [ true, 'Emosido medio engañado' ],
   },
   height: {
     type: Number,

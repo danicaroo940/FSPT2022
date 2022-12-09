@@ -35,9 +35,9 @@ async function create(req, res) {
 }
 
 async function updateById(req, res) {
-  const { characterId } = req.params;
+  const { id } = req.params;
   const fieldsToUpdate = req.body;
-  const characterToUpdate = await charactersBll.updateById({ characterId, fieldsToUpdate });
+  const characterToUpdate = await charactersBll.updateById({ id, fieldsToUpdate });
   res.json(characterToUpdate);
 }
 

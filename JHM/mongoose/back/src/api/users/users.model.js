@@ -9,6 +9,9 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
+  lastConnection: {
+    type: Date,
+  },
 });
 
 const userModel = model('User', userSchema);

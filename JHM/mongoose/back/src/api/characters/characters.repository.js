@@ -5,6 +5,7 @@ const { ObjectId } = Types;
 
 async function getAll({ userId }) {
   const characters = await characterModel
+    // .find({ owner: ObjectId(userId) }, { _id: 0 })
     .find({ owner: ObjectId(userId) })
     // .populate('owner')
     .populate({
@@ -32,24 +33,21 @@ async function create({ character }) {
   return newCharacter;
 }
 
-async function updateById({ characterId, fieldsToUpdate }) {
+async function updateById({ id, fieldsToUpdate }) {
   // const query = { _id: characterId };
-  console.log('updateById')
-  console.log(characterId)
-  const query = { _id: ObjectId(characterId) };
-  console.log(query)
+  const query = { _id: ObjectId(id) };
   const updateBody = { $set: fieldsToUpdate };
-  console.log(updateBody)
   // const character = await characterModel.updateById(query, updateBody);
   const character = await characterModel.updateOne(query, updateBody);
   console.log(character)
   return character;
 }
 
-async function deleteById({ characterId }) {
-  // const characters = await characterModel.findByIdAndDelete({ _id: characterId });
-  const characters = await characterModel.delete({ _id: ObjectId(characterId) });
-  return characters;
+async function deleteById({ id }) {
+  // const characters = await characterModel.findByIdAndDelete({ _id: id });
+  // const characters = await characterModel.delete({ _id: ObjectId(id) });
+  console.log('delete', id);
+  return {};
 }
 
 export { getAll, getById, getByName, create, updateById, deleteById };

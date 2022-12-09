@@ -14,7 +14,7 @@ router.get(
 );
 
 router.get(
-  '/:characterId',
+  '/:id',
   charactersController.getById,
 );
 
@@ -24,12 +24,12 @@ router.post(
 );
 
 router.put(
-  '/:characterId',
+  '/:id',
   charactersController.updateById,
 );
 
 router.delete(
-  '/:characterId',
+  '/:id',
   charactersController.deleteById,
 );
 

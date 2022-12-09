@@ -1,0 +1,22 @@
+body {
+  margin: 0;
+}
+
+.homeContainer {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logoutPanel {
+  width: 100%;
+  position: absolute;
+  top: 0;
+}
+
+.logoutPanel button {
+  float: right;
+}
