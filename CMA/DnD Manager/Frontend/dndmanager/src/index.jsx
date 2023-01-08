@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from "react-dom/client";
 import './styles.scss';
-import { Login } from './pages/page.login';
+import { GenerateBoard } from './elements/reusables/map';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Login />
+    <GenerateBoard />
   </React.StrictMode>
 );

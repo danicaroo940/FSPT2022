@@ -29,6 +29,9 @@ $rightPanelBG: $blue;
   font-size: $rootFontSize;
   font-family: $rootFontFamily;
 }
+#root {
+  width: 250px;
+}
 * {
   margin: 0;
 }
@@ -118,4 +121,46 @@ footer {
 }
 #logo-img {
   height: 80%;
+}
+.cell {
+  display: flex;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: aqua;
+  border: 1px solid black;
+}
+
+.row {
+  display: flex;
+  box-sizing: border-box;
+  flex-flow: row nowrap;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: lightcoral;
+}
+
+.container-shit {
+  display: flex;
+  box-sizing: border-box;
+  flex-flow: column nowrap;
+  position: relative;
+  width: 500px;
+  height: 500px;
+  background: lightgoldenrodyellow;
+}
+
+.pawn {
+  display: flex;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 2px solid black;
+  width: 100%;
+  height: 100%;
+  background: lightgreen;
 }
