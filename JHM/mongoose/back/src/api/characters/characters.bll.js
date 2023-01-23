@@ -49,7 +49,7 @@ async function create({ character }) {
 
 async function updateById({ id, fieldsToUpdate }) {
   const newCharacter = await charactersRepo.updateById({ id, fieldsToUpdate });
-  console.log(newCharacter)
+  console.log(newCharacter);
   return newCharacter;
 }
 
@@ -60,8 +60,8 @@ async function deleteById({ id }) {
 }
 
 /**
- * @author Jona Hidalgo <jona.hidalgo@thebridge.com> 
- * @exports charactersBllMethods 
- * @namespace charactersBllMethods 
+ * @author Jona Hidalgo <jona.hidalgo@thebridge.com>
+ * @exports charactersBllMethods
+ * @namespace charactersBllMethods
  */
 export { getAll, getById, getByName, create, updateById, deleteById };

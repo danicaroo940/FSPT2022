@@ -40,7 +40,7 @@ function appendTdButton(tr, text, callback, character) {
 }
 
 async function updateCharacter(character) {
-  const response = await fetch(`http://localhost:3000/characters/${character._id}`, {
+  const updateCharacterResponse = await fetch(`http://localhost:3000/characters/${character._id}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
@@ -100,7 +100,7 @@ async function createCharacter(headers) {
     },
     body: JSON.stringify(character)
   });
-
+  return await createCharacterResponse.json();
 }
 
 function printCreateRow(table, headers) { // [ name, age, race, color, _id ]
@@ -112,7 +112,7 @@ function printCreateRow(table, headers) { // [ name, age, race, color, _id ]
     td.appendChild(input);
     tr.appendChild(td);
   }
-  
+
   const tdCreate = document.createElement('td');
   const buttonCreate = document.createElement('button');
   buttonCreate.innerText = 'Crear';
@@ -127,7 +127,7 @@ function printCharacters(characters) {
   const charactersPanel = document.getElementById('charactersPanel');
   let table = document.createElement('table');
   // [ name, age, race, color, _id ]
-  const originalHeaders = Object.keys(characters[0])
+  const originalHeaders = Object.keys(characters[0]);
   const headers = originalHeaders.filter((header) => header !== '_id');
   // [ name, age, race, color ]
 

@@ -1,7 +1,7 @@
 import userModel from './users.model.js';
 
-async function getByUsername({username}) {
-  const user = await userModel.findOne({username});
+async function getByUsername({ username }) {
+  const user = await userModel.findOne({ username });
   return user;
 }
 

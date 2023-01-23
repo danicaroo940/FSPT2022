@@ -1,4 +1,4 @@
-import { Types } from "mongoose";
+import { Types } from 'mongoose';
 import characterModel from './characters.model.js';
 
 const { ObjectId } = Types;
@@ -39,7 +39,7 @@ async function updateById({ id, fieldsToUpdate }) {
   const updateBody = { $set: fieldsToUpdate };
   // const character = await characterModel.updateById(query, updateBody);
   const character = await characterModel.updateOne(query, updateBody);
-  console.log(character)
+  console.log(character);
   return character;
 }
 
