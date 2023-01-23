@@ -1,20 +1,26 @@
-import { checkRandomNumber } from "./code/checkRandomNumber.js";
-import * as numberApi from "./code/getRandomNumber.js";
+import * as numberRandom from './code/checkRandomNumber.js';
+import * as numberApi from './code/getRandomNumber.js';
 
-function manualBeforeEach(number) {
-  numberApi.getRandomNumber = jest.fn().mockImplementation(() => number)
-}
-
-describe('d1', () => {
-  test('t1', () => {
-    manualBeforeEach(0);
-    try {
-      checkRandomNumber()
-    } catch (e) {
-      const parseMsg = JSON.parse(e.message);
-      console.log('HOLAAAAAAAAAAAAAAAAAAAAAAAAA');
-      expect(parseMsg.code).toBe(1);
-      expect(parseMsg.description).toBe('Random number cant be lower than 1');
+beforeEach(()=>{
+  numberApi.getRandomNumber = jest.fn()
+  .mockImplementationOnce(() => 0)
+  .mockImplementationOnce(() => 11)
+})
+describe('testing exclude numbers', () => {
+  test('testing <1',() => {
+    try{
+      numberRandom.checkRandomNumber();
+    }catch(e){
+      expect (JSON.parse(e.message).code).toBe(1);
+      expect (JSON.parse(e.message).message).toBe('Random number cant be lower than 1');
+    }
+  });
+  test('testing >10',()=>{
+    try{
+      numberRandom.checkRandomNumber();
+    }catch(e){
+      expect(JSON.parse(e.message).code).toBe(10);
+      expect(JSON.parse(e.message).message).toBe('Random number cant be greater than 10')
     }
   });
 });
